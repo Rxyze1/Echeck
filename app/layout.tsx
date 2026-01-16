@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jaipur Escorts - Premium Call Girls Services',
     description: 'Discreet and verified escort services in Jaipur. Independent call girls available in all areas with real profiles.',
-    images: '/images/og-image-jaipur-escorts.jpg', // Add a relevant OG image
+    images: [{ url: '/images/og-image-jaipur-escorts.jpg' }], // Fixed: Array format
     type: 'website',
     url: 'https://your-escort-site.com',
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  // Site-wide canonical if needed
+  // Removed: canonical property - not valid in Metadata type
 };
 
 export default function RootLayout({
