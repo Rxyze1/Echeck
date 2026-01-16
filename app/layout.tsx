@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  canonical: 'https://your-escort-site.com', // Site-wide canonical if needed
+  // Site-wide canonical if needed
 };
 
 export default function RootLayout({
