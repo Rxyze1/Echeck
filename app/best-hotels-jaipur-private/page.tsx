@@ -32,7 +32,7 @@ export default function BestHotelsPrivatePage() {
         </div>
       </section>
 
-      {/* Top Hotels List - Unique & Researched */}
+      {/* Top Hotels List */}
       <section className="max-w-6xl mx-auto mb-20">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-red-400">
           Top 10 Best Hotels in Jaipur for Private & Discreet Stays (2026)
@@ -181,7 +181,7 @@ export default function BestHotelsPrivatePage() {
         </div>
       </section>
 
-      {/* Trust & Tips Section */}
+      {/* Tips Section */}
       <section className="max-w-6xl mx-auto mb-16 bg-gradient-to-b from-gray-900 to-black p-8 md:p-10 rounded-2xl">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           Tips for Choosing Private & Discreet Hotels in Jaipur
@@ -195,7 +195,7 @@ export default function BestHotelsPrivatePage() {
         </ul>
       </section>
 
-      {/* CTA + Internal Links */}
+      {/* CTA Section */}
       <section className="text-center mb-16">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready for a Private Jaipur Experience?</h2>
         <div className="flex flex-wrap justify-center gap-4 md:gap-6">
