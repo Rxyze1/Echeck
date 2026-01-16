@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Top luxury, heritage & couple-friendly hotels in Jaipur offering maximum privacy & discreet service.',
     images: '/images/best-private-hotels-jaipur-2026.webp',
   },
- 
+  // canonical: 'https://your-site.com/best-hotels-jaipur-private', // REMOVED - not a valid Metadata property
 };
 
 export default function BestHotelsPrivatePage() {
