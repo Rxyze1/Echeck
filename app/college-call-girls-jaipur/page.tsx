@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Book verified young college call girls in Jaipur with real photos & cash payment. Discreet, private & fast service across all areas.',
     images: '/images/college-call-girls-jaipur-hero.webp',
   },
-  canonical: 'https://your-site.com/college-call-girls-jaipur',
+  
 };
 
 export default function CollegeCallGirlsJaipurPage() {

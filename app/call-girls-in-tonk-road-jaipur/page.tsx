@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Premium independent call girls in Tonk Road Jaipur with cash payment & real photos. Fast discreet service.',
     images: '/images/tonk-road-escort-hero.webp',
   },
-  canonical: 'https://your-site.com/call-girls-in-tonk-road-jaipur',
+  
 };
 
 export default function TonkRoadPage() {

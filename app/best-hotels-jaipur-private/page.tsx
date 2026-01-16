@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Top luxury, heritage & couple-friendly hotels in Jaipur offering maximum privacy & discreet service.',
     images: '/images/best-private-hotels-jaipur-2026.webp',
   },
-  canonical: 'https://your-site.com/best-hotels-jaipur-private',
+ 
 };
 
 export default function BestHotelsPrivatePage() {
@@ -21,7 +21,7 @@ export default function BestHotelsPrivatePage() {
           Best Hotels in Jaipur for Private & Discreet Stays 2026 | Couple-Friendly Luxury
         </h1>
         <p className="text-xl text-center text-gray-300 mb-8 max-w-4xl mx-auto">
-          Planning a private, discreet, or romantic getaway in Jaipur? The Pink City offers some of India's most luxurious and privacy-focused hotels perfect for couples or confidential meetings. From heritage palaces with private pools to modern 5-star properties offering complete discretion, here are the **best hotels in Jaipur for private stays** in 2026 — selected for maximum privacy, couple-friendly policies, spacious suites, and discreet service.
+          Planning a private, discreet, or romantic getaway in Jaipur? The Pink City offers some of India&apos;s most luxurious and privacy-focused hotels perfect for couples or confidential meetings. From heritage palaces with private pools to modern 5-star properties offering complete discretion, here are the **best hotels in Jaipur for private stays** in 2026 — selected for maximum privacy, couple-friendly policies, spacious suites, and discreet service.
         </p>
         <div className="flex justify-center gap-6 mb-12">
           <a href="/call-girls-in-jaipur" className="px-8 py-4 bg-red-600 rounded-full font-bold hover:bg-red-700 transition">

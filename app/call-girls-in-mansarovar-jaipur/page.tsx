@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Premium independent call girls in Mansarovar Jaipur with cash payment & real photos. Fast discreet service.',
     images: '/images/mansarovar-escort-hero.webp',
   },
-  canonical: 'https://your-site.com/call-girls-in-mansarovar-jaipur',
+ 
 };
 
 export default function MansarovarPage() {

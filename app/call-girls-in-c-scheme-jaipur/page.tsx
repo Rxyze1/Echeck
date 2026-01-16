@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Premium independent call girls in C-Scheme Jaipur with cash payment & real photos. Fast discreet service.',
     images: '/images/c-scheme-escort-hero.webp',
   },
-  canonical: 'https://your-site.com/call-girls-in-c-scheme-jaipur',
+  
 };
 
 export default function CSchemePage() {

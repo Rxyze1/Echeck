@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Premium independent call girls in Malviya Nagar Jaipur with cash payment & real photos. Fast discreet service.',
     images: '/images/malviya-nagar-escort-hero.webp',
   },
-  canonical: 'https://your-site.com/call-girls-in-malviya-nagar-jaipur',
+ 
 };
 
 export default function MalviyaNagarPage() {

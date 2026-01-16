@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Premium independent call girls in Jagatpura Jaipur with cash payment & real photos. Fast discreet service.',
     images: '/images/jagatpura-escort-hero.webp',
   },
-  canonical: 'https://your-site.com/call-girls-in-jagatpura-jaipur',
+ 
 };
 
 export default function JagatpuraPage() {

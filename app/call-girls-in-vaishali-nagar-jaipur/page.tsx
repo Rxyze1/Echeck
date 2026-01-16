@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Premium independent call girls in Vaishali Nagar Jaipur with cash payment & real photos. Fast discreet service.',
     images: '/images/vaishali-nagar-escort-hero.webp',
   },
-  canonical: 'https://your-site.com/call-girls-in-vaishali-nagar-jaipur',
+  
 };
 
 export default function VaishaliNagarPage() {
