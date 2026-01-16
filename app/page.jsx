@@ -7,7 +7,7 @@ import Gallery from './components/Gallery.jsx'
 const page = () => {
   return (
     <div className="relative overflow-hidden">
-      
+      <SnowEffect />
       <Hero />
       <Gallery />
       

@@ -235,17 +235,6 @@ const Gallery = () => {
     },
   ];
 
-  // Filter categories
-  const filterCategories = [
-    { label: 'All Girls', value: 'all', icon: '👸' },
-    { label: 'Girlfriend', value: 'girlfriend', icon: '💕' },
-    { label: 'Wild', value: 'wild', icon: '🔥' },
-    { label: 'Innocent', value: 'innocent', icon: '😇' },
-    { label: 'MILF', value: 'milf', icon: '👑' },
-    { label: 'Model', value: 'model', icon: '💃' },
-    { label: 'Kinky', value: 'kinky', icon: '😈' },
-  ];
-
   // Filtered profiles
   const filteredProfiles = filter === 'all' 
     ? profiles 
@@ -253,12 +242,12 @@ const Gallery = () => {
 
   // Floating elements
   const floatingElements = useMemo(() => {
-    return Array.from({ length: 15 }, (_, i) => ({
+    return Array.from({ length: 12 }, (_, i) => ({
       id: i,
-      left: (i * 7) % 100,
-      delay: i * 0.3,
-      duration: 8 + (i % 6),
-      scale: 0.6 + (i % 3) * 0.2,
+      left: (i * 8.5) % 100,
+      delay: i * 0.4,
+      duration: 10 + (i % 6),
+      scale: 0.5 + (i % 3) * 0.15,
     }));
   }, []);
 
@@ -266,24 +255,24 @@ const Gallery = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+      transition: { staggerChildren: 0.08, delayChildren: 0.15 }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { type: 'spring', stiffness: 100, damping: 15 }
+      transition: { type: 'spring', stiffness: 120, damping: 18 }
     }
   };
 
   return (
-    <section id="gallery" className="relative min-h-screen py-20 bg-black overflow-hidden">
+    <section id="gallery" className="relative min-h-screen py-12 sm:py-16 md:py-20 bg-black overflow-hidden">
       
-      Floating elements
+      {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {floatingElements.map((el) => (
           <motion.div
@@ -291,14 +280,14 @@ const Gallery = () => {
             className="absolute text-red-500/10"
             style={{
               left: `${el.left}%`,
-              fontSize: `${28 * el.scale}px`,
+              fontSize: `${24 * el.scale}px`,
               bottom: -50,
             }}
             animate={{
-              y: [-50, -1000],
-              x: [0, Math.sin(el.id) * 100, 0],
+              y: [-50, -800],
+              x: [0, Math.sin(el.id) * 80, 0],
               rotate: [0, 360],
-              opacity: [0, 0.5, 0],
+              opacity: [0, 0.4, 0],
             }}
             transition={{
               duration: el.duration,
@@ -314,36 +303,36 @@ const Gallery = () => {
 
       {/* Background gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-red-950/5 to-black pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-radial from-red-900/10 via-transparent to-transparent pointer-events-none" />
 
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 mt-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20">
         
-        {/* Section Header */}
+        {/* Section Header - Mobile Optimized */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-red-950/30 border border-red-900/50 backdrop-blur-sm mb-6"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full bg-red-950/30 border border-red-900/50 backdrop-blur-sm mb-4 sm:mb-6"
           >
             <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
+              className="text-lg sm:text-xl"
             >
               👸
             </motion.span>
-            <span className="text-sm text-gray-400 tracking-widest">OUR HOT GIRLS</span>
+            <span className="text-xs sm:text-sm text-gray-400 tracking-widest">OUR HOT GIRLS</span>
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-4"
             style={{
               background: 'linear-gradient(135deg, #fff 0%, #ff0000 50%, #ff6b6b 100%)',
               backgroundSize: '200% auto',
@@ -367,72 +356,30 @@ const Gallery = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto"
+            transition={{ delay: 0.3, duration: 0.7 }}
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto px-4"
           >
-            Real photos • Verified profiles • <span className="text-red-400 font-semibold">100% satisfaction guarantee</span> 🔥
+            Real photos • Verified profiles • <span className="text-red-400 font-semibold">100% satisfaction</span> 🔥
           </motion.p>
 
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="h-[2px] w-32 mx-auto mt-6 rounded-full bg-gradient-to-r from-transparent via-red-600 to-transparent"
+            transition={{ delay: 0.5, duration: 0.7 }}
+            className="h-[2px] w-24 sm:w-32 mx-auto mt-4 sm:mt-6 rounded-full bg-gradient-to-r from-transparent via-red-600 to-transparent"
           />
         </motion.div>
 
-        {/* Filter Buttons */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {filterCategories.map((cat, index) => (
-            <motion.button
-              key={cat.value}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              onClick={() => setFilter(cat.value)}
-              className={`
-                relative px-6 py-3 rounded-2xl font-medium overflow-hidden transition-all
-                ${filter === cat.value ? 'text-white' : 'text-gray-400 hover:text-white'}
-              `}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: filter === cat.value ? 1 : 0 }}
-                transition={{ duration: 0.3 }}
-              />
-              
-              <div className={`absolute inset-0 rounded-2xl border-2 ${
-                filter === cat.value ? 'border-transparent' : 'border-white/10'
-              }`} />
-              
-              <span className="relative z-10 flex items-center gap-2">
-                <span className="text-lg">{cat.icon}</span>
-                {cat.label}
-              </span>
-            </motion.button>
-          ))}
-        </motion.div> */}
-
-        {/* Gallery Grid */}
+        {/* Gallery Grid - Fully Responsive */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-12 sm:mb-16"
         >
-          {filteredProfiles.map((profile, index) => (
+          {filteredProfiles.map((profile) => (
             <motion.div
               key={profile.id}
               variants={cardVariants}
@@ -445,17 +392,20 @@ const Gallery = () => {
               className="relative group cursor-pointer"
             >
               <motion.div
-                className="relative h-[520px] rounded-3xl overflow-hidden bg-gradient-to-b from-black/50 to-black border-2 border-white/10"
-                whileHover={{ y: -10, scale: 1.02 }}
+                className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-b from-black/50 to-black border-2 border-white/10"
+                whileHover={{ y: -8, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
-                {/* Main image */}
-                <div className="relative h-[340px] overflow-hidden">
+                {/* Main image - Responsive aspect ratio */}
+                <div className="relative aspect-[3/4] sm:aspect-[3/4.2] overflow-hidden">
                   <Image
                     src={profile.images[0]}
                     alt={profile.name}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    priority={profile.id <= 4}
                   />
                   
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
@@ -466,69 +416,72 @@ const Gallery = () => {
                   />
 
                   {/* Photo count */}
-                  <div className="absolute top-4 right-4">
-                    <div className="px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 text-white text-sm font-medium flex items-center gap-1">
-                      <span>📸</span> {profile.images.length}
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+                    <div className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-black/60 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-medium flex items-center gap-1">
+                      <span>📸</span> 
+                      <span className="hidden xs:inline">{profile.images.length}</span>
                     </div>
                   </div>
 
                   {/* Age badge */}
-                  <div className="absolute top-4 left-4">
-                    <div className="px-3 py-1.5 rounded-xl bg-red-600/80 backdrop-blur-md border border-red-500/50 text-white text-sm font-medium">
-                      {profile.age} years
+                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                    <div className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-red-600/80 backdrop-blur-md border border-red-500/50 text-white text-xs sm:text-sm font-medium">
+                      {profile.age}y
                     </div>
                   </div>
 
                   {/* Available badge */}
-                  <div className="absolute bottom-4 left-4">
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
                     <motion.div
-                      className="px-3 py-1.5 rounded-xl bg-green-600/80 backdrop-blur-md border border-green-500/50 text-white text-xs font-medium flex items-center gap-2"
-                      animate={{ scale: [1, 1.05, 1] }}
+                      className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-green-600/80 backdrop-blur-md border border-green-500/50 text-white text-[10px] sm:text-xs font-medium flex items-center gap-1.5 sm:gap-2"
+                      animate={{ scale: [1, 1.03, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
-                      <span className="w-2 h-2 rounded-full bg-green-300 animate-pulse" />
-                      Available Now
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-300 animate-pulse" />
+                      <span className="hidden xs:inline">Available</span>
+                      <span className="xs:hidden">✓</span>
                     </motion.div>
                   </div>
                 </div>
 
-                {/* Card content */}
-                <div className="relative p-6">
-                  <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-red-400 transition-colors">
+                {/* Card content - Responsive padding */}
+                <div className="relative p-4 sm:p-5 md:p-6">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-red-400 transition-colors truncate">
                     {profile.name}
                   </h3>
-                  <p className="text-pink-400 text-sm mb-3">{profile.nameHindi}</p>
+                  <p className="text-pink-400 text-xs sm:text-sm mb-2 sm:mb-3 truncate">{profile.nameHindi}</p>
 
-                  {/* Quick stats */}
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    <span className="px-2 py-1 rounded-lg bg-red-950/50 border border-red-900/50 text-red-300 text-xs">
+                  {/* Quick stats - Scrollable on mobile */}
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                    <span className="px-2 py-0.5 sm:py-1 rounded-lg bg-red-950/50 border border-red-900/50 text-red-300 text-[10px] sm:text-xs whitespace-nowrap">
                       {profile.height}
                     </span>
-                    <span className="px-2 py-1 rounded-lg bg-red-950/50 border border-red-900/50 text-red-300 text-xs">
+                    <span className="px-2 py-0.5 sm:py-1 rounded-lg bg-red-950/50 border border-red-900/50 text-red-300 text-[10px] sm:text-xs whitespace-nowrap">
                       {profile.figure}
                     </span>
-                    <span className="px-2 py-1 rounded-lg bg-red-950/50 border border-red-900/50 text-red-300 text-xs capitalize">
+                    <span className="px-2 py-0.5 sm:py-1 rounded-lg bg-red-950/50 border border-red-900/50 text-red-300 text-[10px] sm:text-xs capitalize whitespace-nowrap">
                       {profile.category}
                     </span>
                   </div>
 
                   {/* Description preview */}
-                  <p className="text-gray-400 text-sm line-clamp-2 mb-3">
+                  <p className="text-gray-400 text-xs sm:text-sm line-clamp-2 mb-2 sm:mb-3">
                     {profile.description}
                   </p>
 
                   {/* View profile hint */}
                   <motion.div
-                    className="text-red-400 font-medium text-sm flex items-center gap-2"
+                    className="text-red-400 font-medium text-xs sm:text-sm flex items-center gap-1 sm:gap-2"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{
                       opacity: hoveredCard === profile.id ? 1 : 0,
                       y: hoveredCard === profile.id ? 0 : 10
                     }}
                   >
-                    Click to view full profile
+                    <span className="hidden sm:inline">Click to view</span>
+                    <span className="sm:hidden">Tap to view</span>
                     <motion.span
-                      animate={{ x: [0, 5, 0] }}
+                      animate={{ x: [0, 4, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     >
                       →
@@ -538,64 +491,36 @@ const Gallery = () => {
 
                 {/* Glow effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 pointer-events-none"
+                  className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 pointer-events-none"
                   style={{
                     boxShadow: '0 0 30px rgba(220, 38, 38, 0.4)',
                   }}
                   transition={{ duration: 0.4 }}
                 />
               </motion.div>
-
-              {/* Floating hearts on hover */}
-              {hoveredCard === profile.id && (
-                <>
-                  {[...Array(3)].map((_, i) => (
-                    <motion.div
-                      key={`heart-${i}`}
-                      className="absolute text-2xl pointer-events-none"
-                      style={{
-                        left: `${25 + i * 25}%`,
-                        bottom: 0,
-                      }}
-                      animate={{
-                        y: [0, -100],
-                        opacity: [0.8, 0],
-                        scale: [1, 1.5],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: i * 0.3,
-                      }}
-                    >
-                      💖
-                    </motion.div>
-                  ))}
-                </>
-              )}
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Bottom info */}
+        {/* Bottom info - Mobile optimized */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           className="text-center"
         >
-          <div className="inline-block p-6 rounded-2xl bg-red-950/20 border border-red-900/30 backdrop-blur-sm">
-            <p className="text-gray-400 text-sm">
+          <div className="inline-block p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-red-950/20 border border-red-900/30 backdrop-blur-sm">
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
               ⚠️ All girls are <span className="text-red-400 font-semibold">18+ verified</span> • 
               Photos are <span className="text-pink-400 font-semibold">100% real</span> • 
-              Click on any profile to see more photos & details
+              <span className="block sm:inline mt-1 sm:mt-0"> Click any profile for details</span>
             </p>
           </div>
         </motion.div>
       </div>
 
-      {/* Profile Detail Modal */}
+      {/* Profile Detail Modal - Mobile Optimized */}
       <AnimatePresence>
         {selectedProfile && (
           <>
@@ -608,40 +533,43 @@ const Gallery = () => {
               className="fixed inset-0 bg-black/95 backdrop-blur-xl z-50"
             />
 
-            {/* Modal */}
+            {/* Modal - Full screen on mobile */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 50 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 50 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="fixed inset-4 md:inset-10 lg:inset-20 z-50 overflow-hidden"
+              className="fixed inset-0 sm:inset-4 md:inset-8 lg:inset-12 xl:inset-20 z-50 flex items-center justify-center p-0 sm:p-4"
             >
-              <div className="relative h-full w-full rounded-3xl bg-black border-2 border-red-900/30 overflow-hidden">
+              <div className="relative w-full h-full max-w-7xl rounded-none sm:rounded-2xl md:rounded-3xl bg-black border-0 sm:border-2 border-red-900/30 overflow-hidden flex flex-col">
                 
                 {/* Close button */}
                 <motion.button
                   onClick={() => setSelectedProfile(null)}
-                  className="absolute top-6 right-6 z-20 p-3 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors"
+                  className="absolute top-4 sm:top-6 right-4 sm:right-6 z-20 p-2 sm:p-3 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors"
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </motion.button>
 
-                <div className="h-full overflow-y-auto">
-                  <div className="grid lg:grid-cols-2 gap-8 p-8">
+                {/* Scrollable content */}
+                <div className="h-full overflow-y-auto overscroll-contain">
+                  <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8">
                     
                     {/* Left: Image Gallery */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       {/* Main image */}
-                      <div className="relative h-[500px] rounded-2xl overflow-hidden bg-black/50">
+                      <div className="relative aspect-[3/4] sm:h-[400px] md:h-[500px] lg:h-[550px] rounded-xl sm:rounded-2xl overflow-hidden bg-black/50">
                         <Image
                           src={selectedProfile.images[selectedImageIndex]}
                           alt={selectedProfile.name}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover"
+                          priority
                         />
                         
                         {/* Navigation */}
@@ -652,9 +580,9 @@ const Gallery = () => {
                               prev > 0 ? prev - 1 : selectedProfile.images.length - 1
                             );
                           }}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors"
+                          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors active:scale-95"
                         >
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                           </svg>
                         </button>
@@ -666,48 +594,53 @@ const Gallery = () => {
                               (prev + 1) % selectedProfile.images.length
                             );
                           }}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors"
+                          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors active:scale-95"
                         >
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
                         </button>
+
+                        {/* Image counter */}
+                        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-medium">
+                          {selectedImageIndex + 1} / {selectedProfile.images.length}
+                        </div>
                       </div>
 
-                      {/* Thumbnails */}
-                      <div className="flex gap-2 overflow-x-auto pb-2">
+                      {/* Thumbnails - Scrollable */}
+                      <div className="flex gap-2 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
                         {selectedProfile.images.map((img, idx) => (
                           <motion.button
                             key={idx}
                             onClick={() => setSelectedImageIndex(idx)}
-                            className={`relative flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 ${
-                              selectedImageIndex === idx ? 'border-red-500' : 'border-white/20'
+                            className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl overflow-hidden border-2 snap-start ${
+                              selectedImageIndex === idx ? 'border-red-500 ring-2 ring-red-500/50' : 'border-white/20'
                             }`}
-                            whileHover={{ scale: 1.1 }}
+                            whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
-                            <Image src={img} alt={`Photo ${idx + 1}`} fill className="object-cover" />
+                            <Image src={img} alt={`Photo ${idx + 1}`} fill sizes="80px" className="object-cover" />
                           </motion.button>
                         ))}
                       </div>
                     </div>
 
                     {/* Right: Profile Details */}
-                    <div className="space-y-6">
+                    <div className="space-y-4 sm:space-y-5 md:space-y-6">
                       <div>
-                        <h2 className="text-4xl font-bold text-white mb-2">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
                           {selectedProfile.name}
                         </h2>
-                        <p className="text-2xl text-pink-400 mb-4">{selectedProfile.nameHindi}</p>
+                        <p className="text-lg sm:text-xl md:text-2xl text-pink-400 mb-3 sm:mb-4">{selectedProfile.nameHindi}</p>
                         
-                        <div className="flex flex-wrap gap-3 mb-4">
-                          <span className="px-4 py-2 rounded-xl bg-red-950/50 border border-red-900/50 text-red-300 font-medium">
+                        <div className="flex flex-wrap gap-2 sm:gap-3 mb-3 sm:mb-4">
+                          <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl bg-red-950/50 border border-red-900/50 text-red-300 text-xs sm:text-sm font-medium">
                             {selectedProfile.age} years
                           </span>
-                          <span className="px-4 py-2 rounded-xl bg-red-950/50 border border-red-900/50 text-red-300 font-medium">
+                          <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl bg-red-950/50 border border-red-900/50 text-red-300 text-xs sm:text-sm font-medium">
                             {selectedProfile.height}
                           </span>
-                          <span className="px-4 py-2 rounded-xl bg-red-950/50 border border-red-900/50 text-red-300 font-medium">
+                          <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl bg-red-950/50 border border-red-900/50 text-red-300 text-xs sm:text-sm font-medium">
                             {selectedProfile.figure}
                           </span>
                         </div>
@@ -715,23 +648,23 @@ const Gallery = () => {
 
                       {/* Description */}
                       <div>
-                        <h3 className="text-xl font-semibold text-white mb-3">About</h3>
-                        <p className="text-gray-400 leading-relaxed mb-4">
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">About</h3>
+                        <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3 sm:mb-4">
                           {selectedProfile.description}
                         </p>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-xs sm:text-sm text-gray-500">
                           Personality: <span className="text-pink-400">{selectedProfile.personality}</span>
                         </p>
                       </div>
 
                       {/* Sex Styles */}
                       <div>
-                        <h3 className="text-xl font-semibold text-white mb-3">Sex Styles Preferred</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">Sex Styles</h3>
                         <div className="flex flex-wrap gap-2">
                           {selectedProfile.sexStyles.map((style, i) => (
                             <span
                               key={i}
-                              className="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600/20 to-pink-600/20 border border-red-500/30 text-red-300 font-medium"
+                              className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl bg-gradient-to-r from-red-600/20 to-pink-600/20 border border-red-500/30 text-red-300 text-xs sm:text-sm font-medium"
                             >
                               {style}
                             </span>
@@ -741,39 +674,39 @@ const Gallery = () => {
 
                       {/* Specialties */}
                       <div>
-                        <h3 className="text-xl font-semibold text-white mb-3">Special Skills</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">Special Skills</h3>
                         <div className="space-y-2">
                           {selectedProfile.specialties.map((skill, i) => (
                             <div key={i} className="flex items-center gap-2">
-                              <span className="text-red-500">🔥</span>
-                              <span className="text-gray-300">{skill}</span>
+                              <span className="text-red-500 text-sm sm:text-base">🔥</span>
+                              <span className="text-gray-300 text-xs sm:text-sm">{skill}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       {/* Availability */}
-                      <div className="p-4 rounded-2xl bg-green-950/30 border border-green-900/50">
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl">✅</span>
+                      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-green-950/30 border border-green-900/50">
+                        <div className="flex items-center gap-2 sm:gap-3">
+                          <span className="text-xl sm:text-2xl">✅</span>
                           <div>
-                            <h4 className="text-white font-semibold">Availability</h4>
-                            <p className="text-green-400">{selectedProfile.available}</p>
+                            <h4 className="text-white font-semibold text-sm sm:text-base">Availability</h4>
+                            <p className="text-green-400 text-xs sm:text-sm">{selectedProfile.available}</p>
                           </div>
                         </div>
                       </div>
 
-                      {/* CTA Buttons */}
-                      <div className="flex flex-col gap-4 pt-4">
+                      {/* CTA Buttons - Sticky on mobile */}
+                      <div className="flex flex-col gap-3 sm:gap-4 pt-4 sticky bottom-0 bg-black/90 backdrop-blur-sm pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
                         <a
                           href={`https://wa.me/${whatsappNumber}?text=Hi! Mujhe ${selectedProfile.name} ko book karna hai`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <motion.button
-                            className="w-full relative overflow-hidden px-8 py-4 rounded-2xl font-semibold text-white"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            className="w-full relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-white text-sm sm:text-base"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                           >
                             <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500" />
                             <span className="relative flex items-center justify-center gap-2">
@@ -785,9 +718,9 @@ const Gallery = () => {
 
                         <a href={`tel:${phoneNumber}`}>
                           <motion.button
-                            className="w-full px-8 py-4 rounded-2xl font-semibold text-white border-2 border-red-500 hover:bg-red-500/10 transition-all"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            className="w-full px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-white text-sm sm:text-base border-2 border-red-500 hover:bg-red-500/10 transition-all"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                           >
                             <span className="flex items-center justify-center gap-2">
                               <span className="text-xl">📞</span>
@@ -804,6 +737,17 @@ const Gallery = () => {
           </>
         )}
       </AnimatePresence>
+
+      {/* Custom scrollbar styles */}
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 };
