@@ -8,9 +8,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Best Hotels in Jaipur for Private & Discreet Stays 2026',
     description: 'Top luxury, heritage & couple-friendly hotels in Jaipur offering maximum privacy & discreet service.',
-    images: '/images/best-private-hotels-jaipur-2026.webp',
+    images: [{ url: '/images/best-private-hotels-jaipur-2026.webp' }],
   },
-  // canonical: 'https://your-site.com/best-hotels-jaipur-private', // REMOVED - not a valid Metadata property
 };
 
 export default function BestHotelsPrivatePage() {
@@ -23,11 +22,11 @@ export default function BestHotelsPrivatePage() {
         <p className="text-xl text-center text-gray-300 mb-8 max-w-4xl mx-auto">
           Planning a private, discreet, or romantic getaway in Jaipur? The Pink City offers some of India&apos;s most luxurious and privacy-focused hotels perfect for couples or confidential meetings. From heritage palaces with private pools to modern 5-star properties offering complete discretion, here are the **best hotels in Jaipur for private stays** in 2026 — selected for maximum privacy, couple-friendly policies, spacious suites, and discreet service.
         </p>
-        <div className="flex justify-center gap-6 mb-12">
-          <a href="/call-girls-in-jaipur" className="px-8 py-4 bg-red-600 rounded-full font-bold hover:bg-red-700 transition">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
+          <a href="/call-girls-in-jaipur" className="px-6 md:px-8 py-3 md:py-4 bg-red-600 rounded-full font-bold hover:bg-red-700 transition">
             Explore Jaipur Escorts Services
           </a>
-          <a href="https://wa.me/1234567890" className="px-8 py-4 border-2 border-red-500 rounded-full font-bold hover:bg-red-900/30 transition">
+          <a href="https://wa.me/1234567890" className="px-6 md:px-8 py-3 md:py-4 border-2 border-red-500 rounded-full font-bold hover:bg-red-900/30 transition">
             WhatsApp for Booking Assistance
           </a>
         </div>
@@ -39,85 +38,155 @@ export default function BestHotelsPrivatePage() {
           Top 10 Best Hotels in Jaipur for Private & Discreet Stays (2026)
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10">
           {/* 1 */}
-          <div className="bg-gray-900/60 p-8 rounded-2xl border border-red-900/40">
-            <h3 className="text-2xl font-bold mb-4">The Oberoi Rajvilas, Jaipur</h3>
-            <p className="mb-4">
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">The Oberoi Rajvilas, Jaipur</h3>
+            <p className="mb-4 text-gray-300">
               Widely regarded as the most luxurious and private resort in Jaipur. Spread over 32 acres with private pool villas, secluded gardens, and royal suites — ideal for maximum discretion. Perfect for high-profile private stays.
             </p>
-            <ul className="text-sm text-gray-400 mb-4">
-              <li>Private plunge pools in most villas</li>
-              <li>Ultra-private location near Kukas</li>
-              <li>Excellent for romantic & confidential getaways</li>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Private plunge pools in most villas</li>
+              <li>✓ Ultra-private location near Kukas</li>
+              <li>✓ Excellent for romantic & confidential getaways</li>
             </ul>
             <span className="text-red-400 font-semibold">Best for: Ultimate luxury & total privacy</span>
           </div>
 
           {/* 2 */}
-          <div className="bg-gray-900/60 p-8 rounded-2xl border border-red-900/40">
-            <h3 className="text-2xl font-bold mb-4">Rambagh Palace, Jaipur (Taj)</h3>
-            <p className="mb-4">
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Rambagh Palace, Jaipur (Taj)</h3>
+            <p className="mb-4 text-gray-300">
               Historic royal palace turned ultra-luxury hotel offering opulent suites with private terraces and gardens. Known for discreet service and heritage privacy — a favorite for couples seeking royal seclusion.
             </p>
-            <ul className="text-sm text-gray-400 mb-4">
-              <li>Suites with private plunge pools</li>
-              <li>Central yet secluded location</li>
-              <li>Legendary butler service</li>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Suites with private plunge pools</li>
+              <li>✓ Central yet secluded location</li>
+              <li>✓ Legendary butler service</li>
             </ul>
             <span className="text-red-400 font-semibold">Best for: Heritage privacy & romance</span>
           </div>
 
           {/* 3 */}
-          <div className="bg-gray-900/60 p-8 rounded-2xl border border-red-900/40">
-            <h3 className="text-2xl font-bold mb-4">The Leela Palace Jaipur</h3>
-            <p className="mb-4">
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">The Leela Palace Jaipur</h3>
+            <p className="mb-4 text-gray-300">
               Majestic palace-style hotel with spacious villas, private pools, and serene gardens. Extremely couple-friendly with high privacy standards — perfect for discreet luxury stays.
             </p>
-            <ul className="text-sm text-gray-400 mb-4">
-              <li>Private villas with personal butler</li>
-              <li>Secluded location near Kukas</li>
-              <li>World-class spa & dining</li>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Private villas with personal butler</li>
+              <li>✓ Secluded location near Kukas</li>
+              <li>✓ World-class spa & dining</li>
             </ul>
             <span className="text-red-400 font-semibold">Best for: Palace-like privacy</span>
           </div>
 
           {/* 4 */}
-          <div className="bg-gray-900/60 p-8 rounded-2xl border border-red-900/40">
-            <h3 className="text-2xl font-bold mb-4">Fairmont Jaipur</h3>
-            <p className="mb-4">
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Fairmont Jaipur</h3>
+            <p className="mb-4 text-gray-300">
               Grand resort-style property offering large suites, private balconies, and excellent privacy features. Known for couple-friendly amenities and discreet service near Amer Fort.
             </p>
-            <ul className="text-sm text-gray-400 mb-4">
-              <li>Spacious rooms with private access</li>
-              <li>Multiple pools & gardens</li>
-              <li>High privacy rating</li>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Spacious rooms with private access</li>
+              <li>✓ Multiple pools & gardens</li>
+              <li>✓ High privacy rating</li>
             </ul>
             <span className="text-red-400 font-semibold">Best for: Modern luxury privacy</span>
           </div>
 
           {/* 5 */}
-          <div className="bg-gray-900/60 p-8 rounded-2xl border border-red-900/40">
-            <h3 className="text-2xl font-bold mb-4">ITC Rajputana, Jaipur</h3>
-            <p className="mb-4">
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">ITC Rajputana, Jaipur</h3>
+            <p className="mb-4 text-gray-300">
               Centrally located luxury hotel with spacious executive suites and excellent privacy. Popular for discreet business & couple stays in the heart of Jaipur.
             </p>
-            <ul className="text-sm text-gray-400 mb-4">
-              <li>Private lounge access</li>
-              <li>Central location with quiet rooms</li>
-              <li>Top-notch security</li>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Private lounge access</li>
+              <li>✓ Central location with quiet rooms</li>
+              <li>✓ Top-notch security</li>
             </ul>
             <span className="text-red-400 font-semibold">Best for: Central discreet luxury</span>
           </div>
 
-          {/* Continue with 5 more unique entries based on research... */}
+          {/* 6 */}
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Trident Jaipur</h3>
+            <p className="mb-4 text-gray-300">
+              Modern boutique hotel with private garden villas and secluded cottages. Excellent for couples seeking privacy in a peaceful setting away from city noise.
+            </p>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Garden view private cottages</li>
+              <li>✓ Quiet location near Amer</li>
+              <li>✓ Discreet couple-friendly service</li>
+            </ul>
+            <span className="text-red-400 font-semibold">Best for: Peaceful private getaways</span>
+          </div>
+
+          {/* 7 */}
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Samode Palace</h3>
+            <p className="mb-4 text-gray-300">
+              Historic palace hotel 40km from Jaipur offering complete seclusion. Perfect for couples wanting ultra-private heritage experience with royal suites and private dining.
+            </p>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Completely secluded location</li>
+              <li>✓ Private heritage suites</li>
+              <li>✓ Custom romantic arrangements</li>
+            </ul>
+            <span className="text-red-400 font-semibold">Best for: Total seclusion & heritage</span>
+          </div>
+
+          {/* 8 */}
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Alila Fort Bishangarh</h3>
+            <p className="mb-4 text-gray-300">
+              Stunning fort resort with private suites featuring personal pools and terraces. Ultimate privacy with breathtaking views, perfect for romantic escapes.
+            </p>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Private plunge pools in suites</li>
+              <li>✓ Secluded fort location</li>
+              <li>✓ Exceptional privacy standards</li>
+            </ul>
+            <span className="text-red-400 font-semibold">Best for: Fort luxury & privacy</span>
+          </div>
+
+          {/* 9 */}
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Radisson Blu Jaipur</h3>
+            <p className="mb-4 text-gray-300">
+              Modern hotel near Malviya Nagar with spacious suites and private access. Excellent couple-friendly policies and discreet service in a convenient location.
+            </p>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Large suites with sitting areas</li>
+              <li>✓ Convenient city location</li>
+              <li>✓ Strong privacy policies</li>
+            </ul>
+            <span className="text-red-400 font-semibold">Best for: City convenience & privacy</span>
+          </div>
+
+          {/* 10 */}
+          <div className="bg-gray-900/60 p-6 md:p-8 rounded-2xl border border-red-900/40 hover:border-red-700/60 transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">JW Marriott Jaipur Resort & Spa</h3>
+            <p className="mb-4 text-gray-300">
+              Sprawling resort with private villas and extensive gardens. Excellent for couples seeking luxury privacy with world-class amenities and discreet service.
+            </p>
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>✓ Private villa options</li>
+              <li>✓ Extensive private grounds</li>
+              <li>✓ Premium couple-friendly service</li>
+            </ul>
+            <span className="text-red-400 font-semibold">Best for: Resort-style privacy</span>
+          </div>
         </div>
       </section>
 
       {/* Trust & Tips Section */}
-      <section className="max-w-6xl mx-auto mb-16 bg-gradient-to-b from-gray-900 to-black p-10 rounded-2xl">
-        <h2 className="text-3xl font-bold text-center mb-8">Tips for Choosing Private & Discreet Hotels in Jaipur</h2>
-        <ul className="space-y-4 text-lg">
+      <section className="max-w-6xl mx-auto mb-16 bg-gradient-to-b from-gray-900 to-black p-8 md:p-10 rounded-2xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+          Tips for Choosing Private & Discreet Hotels in Jaipur
+        </h2>
+        <ul className="space-y-4 text-base md:text-lg text-gray-300">
           <li>✅ Opt for heritage/luxury resorts outside city center (Kukas, Amer) for maximum privacy</li>
           <li>✅ Look for properties with private pools/villas & butler service</li>
           <li>✅ Choose hotels known for couple-friendly policies & no unnecessary questions</li>
@@ -128,11 +197,17 @@ export default function BestHotelsPrivatePage() {
 
       {/* CTA + Internal Links */}
       <section className="text-center mb-16">
-        <h2 className="text-3xl font-bold mb-6">Ready for a Private Jaipur Experience?</h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          <a href="/call-girls-in-jaipur" className="px-8 py-4 bg-red-600 rounded-full font-bold hover:bg-red-700">Explore Jaipur Escorts</a>
-          <a href="/call-girls-in-malviya-nagar-jaipur" className="px-6 py-3 border border-red-500 rounded-full hover:bg-red-900/30">Malviya Nagar Escorts</a>
-          <a href="/call-girls-in-vaishali-nagar-jaipur" className="px-6 py-3 border border-red-500 rounded-full hover:bg-red-900/30">Vaishali Nagar Escorts</a>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready for a Private Jaipur Experience?</h2>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          <a href="/call-girls-in-jaipur" className="px-6 md:px-8 py-3 md:py-4 bg-red-600 rounded-full font-bold hover:bg-red-700 transition">
+            Explore Jaipur Escorts
+          </a>
+          <a href="/call-girls-in-malviya-nagar-jaipur" className="px-5 md:px-6 py-2.5 md:py-3 border border-red-500 rounded-full hover:bg-red-900/30 transition">
+            Malviya Nagar Escorts
+          </a>
+          <a href="/call-girls-in-vaishali-nagar-jaipur" className="px-5 md:px-6 py-2.5 md:py-3 border border-red-500 rounded-full hover:bg-red-900/30 transition">
+            Vaishali Nagar Escorts
+          </a>
         </div>
       </section>
 
