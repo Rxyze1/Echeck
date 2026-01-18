@@ -77,11 +77,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code", // GET FROM SEARCH CONSOLE
-    yandex: "your-yandex-verification",    
-    bing: "your-bing-verification",        
-  },
+  // verification: {
+  //   google: "your-google-verification-code", // GET FROM SEARCH CONSOLE
+  //   yandex: "your-yandex-verification",    
+  //   bing: "your-bing-verification",        
+  // },
   authors: [{ name: "Jaipur Call Girls Team" }],
   publisher: "Jaipur Call Girls Service",
   category: "Adult Services, Companionship",
