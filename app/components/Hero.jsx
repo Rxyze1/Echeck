@@ -87,7 +87,7 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, [placeholders.length, isHovering]);
 
-  const titleText = "Rent A Girlfriend";
+  const titleText = "Jaipur Call Girls";
   const words = titleText.split(" ");
 
   return (

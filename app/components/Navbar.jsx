@@ -105,7 +105,7 @@ const NavLogo = () => (
           animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
         >
-          Rent A Girlfriend
+          Jaipur Call Girls
         </motion.h1>
         <span className="text-[9px] text-gray-500 font-light tracking-widest">
           PREMIUM • EXCLUSIVE
