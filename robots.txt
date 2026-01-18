@@ -1,0 +1,46 @@
+# robots.txt for jaipurcallgiirl.top - Jaipur Call Girls Service 2026
+# Optimized for search engines: Allow full indexing of public pages, block private/admin areas
+# Last updated: January 18, 2026
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /private/
+Disallow: /api/private/
+Disallow: /temp/
+Disallow: /*?*   # Optional: Block URLs with query parameters to reduce duplicate content
+
+# Explicitly allow important public pages (helps crawl priority)
+Allow: /
+Allow: /services
+Allow: /faq
+Allow: /areas
+Allow: /contact
+Allow: /blog
+Allow: /rates
+
+# Sitemap (highly recommended for better crawling & indexing)
+Sitemap: https://jaipurcallgiirl.top/sitemap.xml
+
+# Gentle crawl delay (helps avoid server overload from aggressive bots)
+Crawl-delay: 10
+
+# Block known bad/scraping bots common in adult niches
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
