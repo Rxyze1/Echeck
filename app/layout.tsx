@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   /* ---------- Verification: use allowed fields + 'other' for custom tags ---------- */
   verification: {
     // Next.js supports a named 'google' key — keep if you like:
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
+    google: "EKSfvZ33e5L4FbUOKWrIS8x7_Hztwk14gPs-BnWKJJ4",
     // yandex/yahoo keys are supported if you need them
     yandex: "YOUR_YANDEX_VERIFICATION_CODE",
     // Put Bing (and any other custom meta names) under `other` using the exact meta name:
