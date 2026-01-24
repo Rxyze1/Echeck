@@ -186,7 +186,7 @@ const SEOFaq = () => {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="https://wa.me/8306433904?text=Hi,%20I%20have%20a%20question%20about%20Jaipur%20call%20girls%20service"
+                href="https://wa.me/+918058457070?text=Hi,%20I%20have%20a%20question%20about%20Jaipur%20call%20girls%20service"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -199,7 +199,7 @@ const SEOFaq = () => {
                 </motion.button>
               </a>
 
-              <a href="tel:+918306433904">
+              <a href="tel:+918058457070">
                 <motion.button
                   className="px-10 py-5 rounded-2xl font-bold text-lg text-white border-2 border-red-500 hover:bg-red-500/10"
                   whileHover={{ scale: 1.05 }}
