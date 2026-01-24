@@ -10,10 +10,14 @@ import LOGO from '../../public/logo/LOGO.png';
 // CONFIGURATION
 // ============================================
 const CONFIG = {
-  phoneNumber: '+1234567890',
-  whatsappNumber: '1234567890',
-  whatsappMessage: 'Hi! I\'m interested in your premium service',
+  phoneNumber: '+918058457070',
+  whatsappNumber: '8058457070',
+  whatsappMessage: "Hi! I'm interested in your premium service",
 };
+
+// ============================================
+// NAVIGATION LINKS
+// ============================================
 
 const NAV_LINKS = [
   { name: 'Home', href: '/', icon: '🏠' },

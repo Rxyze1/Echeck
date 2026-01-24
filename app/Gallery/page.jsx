@@ -10,7 +10,7 @@ const Gallery = () => {
   const [filter, setFilter] = useState('all');
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  const whatsappNumber = '1234567890';
+  const whatsappNumber = '8058457070';
   const phoneNumber = '+91' + whatsappNumber;
 
   // 10 Indian Girls Profiles with detailed info

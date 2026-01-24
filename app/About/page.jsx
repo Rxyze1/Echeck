@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const About = () => {
   const [activeTab, setActiveTab] = useState('about');
 
-  const whatsappNumber = '1234567890';
+  const whatsappNumber = '8058457070';
   const phoneNumber = '+91' + whatsappNumber;
 
   // Why Choose Us Points

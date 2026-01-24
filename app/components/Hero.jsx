@@ -229,7 +229,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 1.1, ease: "easeOut" }}
           className="flex flex-wrap gap-3 sm:gap-4 justify-center mb-10 sm:mb-12"
         >
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/+918058457070" target="_blank" rel="noopener noreferrer">
             <motion.button
               className="relative group px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white text-sm sm:text-base overflow-hidden bg-gradient-to-r from-red-600 to-red-500 shadow-lg shadow-red-500/30"
               whileHover={{ scale: 1.05, y: -2 }}
@@ -244,7 +244,7 @@ const Hero = () => {
             </motion.button>
           </a>
 
-          <a href="tel:+1234567890">
+          <a href="tel:+918058457070">
             <motion.button
               className="relative px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white text-sm sm:text-base border-2 border-red-500/50 hover:border-red-500 backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors"
               whileHover={{ scale: 1.05, y: -2 }}

@@ -548,7 +548,7 @@ const Gallery = () => {
                       {/* CTA Buttons */}
                       <div className="flex flex-col gap-3 sm:gap-4 pt-4 sm:pt-6 sticky bottom-0 bg-black/90 pb-4 sm:pb-0">
                         <a
-                          href={`https://wa.me/1234567890?text=Hi! I'm interested in booking ${selectedProfile.name}`}
+                          href={`https://wa.me/+918058457070?text=Hi! I'm interested in booking ${selectedProfile.name}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full"
@@ -561,7 +561,7 @@ const Gallery = () => {
                           </button>
                         </a>
 
-                        <a href="tel:+1234567890" className="w-full">
+                        <a href="tel:+918058457070" className="w-full">
                           <button className="w-full px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-white text-sm sm:text-base border-2 border-red-500 hover:bg-red-500/10 hover:scale-[1.02] active:scale-95 transition-all duration-200">
                             <span className="flex items-center justify-center gap-2">
                               <span className="text-xl">📞</span>

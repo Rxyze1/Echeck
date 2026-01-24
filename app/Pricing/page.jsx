@@ -6,14 +6,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Pricing = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  const whatsappNumber = '1234567890'; // Change to real number
+  const whatsappNumber = '8058457070'; // Change to real number
   const phoneNumber = '+91' + whatsappNumber;
 
   // Horny Escort Packages - Jaipur Full Service
   const pricingPlans = [
     {
       id: 1,
-      name: "Regular Horny Fuck",
+      name: "Regular Horny Sex",
       nameHindi: "नॉर्मल सेक्स पैकेज",
       price: "₹3000",
       duration: "/ hour",
@@ -59,7 +59,7 @@ const Pricing = () => {
     },
     {
       id: 3,
-      name: "VIP Ultimate Fuck",
+      name: "VIP Ultimate Sex",
       nameHindi: "वीआईपी अनलिमिटेड चुदाई",
       price: "Let's Talk",
       duration: "/ session",
@@ -67,7 +67,7 @@ const Pricing = () => {
       popular: false,
       gradient: "from-purple-600 to-pink-600",
       badge: "Elite & Wild",
-      tagline: "No limits filthy experience – total satisfaction guaranteed",
+      tagline: "No limits filthy experience – total satisfaction",
       features: [
         { text: "Unlimited shots (2–4 rounds)", emoji: "♾️" },
         { text: "Anal sex (if girl comfortable)", emoji: "🍑🔥" },
@@ -221,7 +221,7 @@ const Pricing = () => {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Horny Chudai Packages
+            Horny Sex Escort Packages
           </motion.h2>
 
           {/* Description */}

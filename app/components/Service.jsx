@@ -12,7 +12,7 @@ import Head from 'next/head';
 // );
 
 const Service = () => {
-  const whatsappNumber = '8306433904';
+  const whatsappNumber = '8058457070';
   const phoneNumber = '+91' + whatsappNumber;
   
   // Reduced Motion Preference
