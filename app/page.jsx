@@ -4,6 +4,7 @@ import SnowEffect from './components/SnowEffect.jsx'
 import Gallery from './components/Gallery.jsx'
 import Service from './components/Service.jsx'
 import SEOFaq from '../app/components/SEOFaq.tsx'
+import Footer from '../app/components/Footer.jsx'
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       <Gallery />
       <Service />
       <SEOFaq />
+      <Footer />
       
     </div>
   )

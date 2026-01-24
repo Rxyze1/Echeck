@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function MalviyaNagarPage() {
   return (
     <main className="min-h-screen bg-black text-white py-8 px-4 md:px-8">
-      <section className="max-w-6xl mx-auto mb-16">
+      <section className="max-w-6xl mx-auto mb-16 mt-24">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-red-500">
           Call Girls in Malviya Nagar Jaipur ₹3000 Cash Payment | Verified Escorts 2026
         </h1>
@@ -25,8 +25,8 @@ export default function MalviyaNagarPage() {
           Discover genuine and verified <strong>call girls in Malviya Nagar Jaipur</strong> for discreet companionship. Our independent escorts offer premium services starting from ₹3000 per hour with real photos, cash payment, and complete privacy. Available 24/7 near World Trade Park, Jawahar Circle, and Apex Hospital areas. Fast outcall/incall delivery within 20-40 minutes.
         </p>
         <div className="flex justify-center gap-6 mb-12">
-          <a href="https://wa.me/1234567890?text=Hi, interested in call girls in Malviya Nagar Jaipur" className="px-8 py-4 bg-red-600 rounded-full font-bold hover:bg-red-700">WhatsApp Now 💬</a>
-          <a href="tel:+1234567890" className="px-8 py-4 border-2 border-red-500 rounded-full font-bold hover:bg-red-900/30">Call Now 📞</a>
+          <a href="https://wa.me/+918058457070?text=Hi, interested in call girls in Malviya Nagar Jaipur" className="px-8 py-4 bg-red-600 rounded-full font-bold hover:bg-red-700">WhatsApp Now 💬</a>
+          <a href="tel:+918058457070" className="px-8 py-4 border-2 border-red-500 rounded-full font-bold hover:bg-red-900/30">Call Now 📞</a>
         </div>
       </section>
 
@@ -108,7 +108,7 @@ export default function MalviyaNagarPage() {
       <section className="text-center mb-16">
         <h2 className="text-3xl font-bold mb-6">Ready to Book?</h2>
         <div className="flex justify-center gap-6">
-          <a href="https://wa.me/1234567890?text=Hi, interested in call girls in Malviya Nagar Jaipur" className="px-8 py-4 bg-red-600 rounded-full font-bold hover:bg-red-700">WhatsApp Now 💬</a>
+          <a href="https://wa.me/+918058457070?text=Hi, interested in call girls in Malviya Nagar Jaipur" className="px-8 py-4 bg-red-600 rounded-full font-bold hover:bg-red-700">WhatsApp Now 💬</a>
           <a href="tel:+1234567890" className="px-8 py-4 border-2 border-red-500 rounded-full font-bold hover:bg-red-900/30">Call Now 📞</a>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function MalviyaNagarPage() {
             "name": "Call Girls in Malviya Nagar Jaipur",
             "description": "Verified independent call girls and escorts in Malviya Nagar Jaipur with discreet services.",
             "url": "https://your-site.com/call-girls-in-malviya-nagar-jaipur",
-            "telephone": "+1234567890",
+            "telephone": "+918058457070",
             "priceRange": "₹3000-₹10000",
             "address": {
               "@type": "PostalAddress",
@@ -139,7 +139,7 @@ export default function MalviyaNagarPage() {
               "closes": "23:59"
             },
             "sameAs": [
-              "https://wa.me/1234567890"
+              "https://wa.me/+918058457070"
             ],
             "image": [
               "/images/malviya-nagar-escort-1.webp"

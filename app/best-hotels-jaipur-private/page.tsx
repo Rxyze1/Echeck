@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function BestHotelsPrivatePage() {
   return (
-    <main className="min-h-screen bg-black text-gray-200 py-12 px-4 md:px-8">
-      <section className="max-w-6xl mx-auto mb-16">
+    <main className="min-h-screen bg-black text-gray-200 py-12 px-4 md:px-8 ">
+      <section className="max-w-6xl mx-auto mb-16 mt-24">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-red-500">
           Best Hotels in Jaipur for Private & Discreet Stays 2026 | Couple-Friendly Luxury
         </h1>
@@ -26,7 +26,7 @@ export default function BestHotelsPrivatePage() {
           <a href="/call-girls-in-jaipur" className="px-6 md:px-8 py-3 md:py-4 bg-red-600 rounded-full font-bold hover:bg-red-700 transition">
             Explore Jaipur Escorts Services
           </a>
-          <a href="https://wa.me/1234567890" className="px-6 md:px-8 py-3 md:py-4 border-2 border-red-500 rounded-full font-bold hover:bg-red-900/30 transition">
+          <a href="https://wa.me/+918058457070" className="px-6 md:px-8 py-3 md:py-4 border-2 border-red-500 rounded-full font-bold hover:bg-red-900/30 transition">
             WhatsApp for Booking Assistance
           </a>
         </div>

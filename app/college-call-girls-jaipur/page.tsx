@@ -19,18 +19,19 @@ export default function CollegeCallGirlsJaipurPage() {
   return (
     <main className="min-h-screen bg-black text-gray-200">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 md:px-8 text-center bg-gradient-to-b from-black via-red-950/30 to-black">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-pink-500 via-red-500 to-rose-600 bg-clip-text text-transparent">
+      <section className="relative py-20 px-4 md:px-8 text-center bg-gradient-to-b from-black via-red-950/30 to-black ">
+       <div className='mt-24'>
+         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-pink-500 via-red-500 to-rose-600 bg-clip-text text-transparent">
           College Call Girls in Jaipur ₹3500+ | Young Student Escorts 2026 | Real Photos
         </h1>
 
         <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-10 text-gray-300">
           Looking for <strong>young college call girls in Jaipur</strong>? We offer genuine, fresh & beautiful student escorts – verified with real photos, cash payment (no advance), and complete privacy. Perfect for those who prefer youthful energy and natural charm. Available 24/7 in Malviya Nagar, Vaishali Nagar, Mansarovar, Jagatpura, Tonk Road & across Jaipur. Fast discreet delivery (20–40 mins).
         </p>
-
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
+ 
+        <div className="flex flex-wrap justify-center gap-6 mb-12  ">
           <a
-            href="https://wa.me/1234567890?text=Hi! Interested in young college call girls in Jaipur"
+            href="https://wa.me/+918058457070?text=Hi! Interested in young college call girls in Jaipur"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-5 bg-gradient-to-r from-pink-600 to-red-600 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition"
@@ -38,16 +39,17 @@ export default function CollegeCallGirlsJaipurPage() {
             WhatsApp Now 💬
           </a>
           <a
-            href="tel:+911234567890"
+            href="tel:+918058457070"
             className="px-10 py-5 border-2 border-pink-500 rounded-full font-bold text-lg hover:bg-pink-900/30 transition"
           >
             Call Now 📞
           </a>
         </div>
+       </div>
       </section>
 
       {/* Why College Girls Category */}
-      <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
+      <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto ">
         <h2 className="text-4xl font-bold text-center mb-12 text-pink-500">
           Why Choose College Call Girls in Jaipur?
         </h2>
@@ -80,7 +82,7 @@ export default function CollegeCallGirlsJaipurPage() {
       </section>
 
       {/* Areas Coverage */}
-      <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
+      <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto ">
         <h2 className="text-4xl font-bold text-center mb-12">
           Where You Can Meet College Call Girls in Jaipur
         </h2>
@@ -157,7 +159,7 @@ export default function CollegeCallGirlsJaipurPage() {
         <div className="flex flex-wrap justify-center gap-6">
          
         <a
-  href="https://wa.me/1234567890?text=Hi%21%20I%20want%20young%20college%20call%20girls%20in%20Jaipur"
+  href="https://wa.me/+918058457070?text=Hi%21%20I%20want%20young%20college%20call%20girls%20in%20Jaipur"
   target="_blank"
   rel="noopener noreferrer"
   className="px-12 py-6 bg-gradient-to-r from-pink-600 to-red-600 rounded-full text-xl font-bold shadow-2xl hover:scale-105 transition"
@@ -166,7 +168,7 @@ export default function CollegeCallGirlsJaipurPage() {
 </a>
 
           <a
-            href="tel:+911234567890"
+            href="tel:+918058457070"
             className="px-12 py-6 border-2 border-pink-500 rounded-full text-xl font-bold hover:bg-pink-900/30 transition"
           >
             Call Now 📞

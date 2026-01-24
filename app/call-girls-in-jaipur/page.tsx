@@ -78,14 +78,14 @@ const BOOKING_STEPS = [
 ];
 
 export default function JaipurHubPage() {
-  const whatsappUrl = 'https://wa.me/1234567890?text=Hi!%20Interested%20in%20call%20girls%20in%20Jaipur%20discreet%20service';
-  const phoneNumber = '+911234567890';
+  const whatsappUrl = 'https://wa.me/+918058457070?text=Hi!%20Interested%20in%20call%20girls%20in%20Jaipur%20discreet%20service';
+  const phoneNumber = '+918058457070';
 
   return (
     <main className="min-h-screen bg-black text-gray-200">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 md:px-8 text-center bg-gradient-to-b from-black via-red-950/20 to-black">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 px-4 md:px-8 text-center bg-gradient-to-b from-black via-red-950/20 to-black ">
+        <div className="max-w-6xl mx-auto mt-24">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-red-500 via-pink-500 to-red-600 bg-clip-text text-transparent">
             Call Girls in Jaipur ₹3000 Cash Payment | Verified Independent Escorts 2026
           </h1>
