@@ -3,6 +3,8 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import SummerLeavesEffect from '../components/SummerLeavesEffect';
+import SocialProofNotifications from '../components/SocialProofNotifications';
 
 const Gallery = () => {
   const [selectedProfile, setSelectedProfile] = useState(null);
@@ -271,6 +273,8 @@ const Gallery = () => {
 
   return (
     <section id="gallery" className="relative min-h-screen py-12 sm:py-16 md:py-20 bg-black overflow-hidden">
+      < SummerLeavesEffect />
+      <SocialProofNotifications />
       
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

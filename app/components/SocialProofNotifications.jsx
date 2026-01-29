@@ -144,7 +144,7 @@ export default function SocialProofNotifications() {
   }, []);
 
   return (
-    <div className="fixed top-24 right-4 z-[998] flex flex-col gap-3 pointer-events-none max-w-[90vw] sm:max-w-md">
+    <div className="fixed top-28 right-4 z-[998] flex flex-col gap-3 pointer-events-none max-w-[90vw] sm:max-w-md">
       <AnimatePresence>
         {notifications.map((notification) => (
           <motion.div

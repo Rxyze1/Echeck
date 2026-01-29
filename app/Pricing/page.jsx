@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SocialProofNotifications from '../components/SocialProofNotifications';
+import SummerLeavesEffect from '../components/SummerLeavesEffect';
 
 const Pricing = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -142,6 +144,9 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="relative min-h-screen py-20 bg-black overflow-hidden" >
+      <SummerLeavesEffect />
+
+      <SocialProofNotifications />
       
       {/* Floating horny elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

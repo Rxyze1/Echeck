@@ -2,6 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SocialProofNotifications from '../components/SocialProofNotifications';
+import SummerLeavesEffect from '../components/SummerLeavesEffect';
+
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('about');
@@ -143,6 +146,9 @@ const About = () => {
 
   return (
     <section id="about" className="relative min-h-screen py-20 bg-black overflow-hidden">
+<SummerLeavesEffect />
+<SocialProofNotifications />
+
       
       {/* Floating hearts background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
