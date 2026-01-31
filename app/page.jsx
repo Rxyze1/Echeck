@@ -2,7 +2,7 @@
 import Hero from  '../app/components/Hero.jsx'
 import SnowEffect from './components/SnowEffect.jsx'
 import Gallery from './components/Gallery.jsx'
-import Service from './components/Service.jsx'
+// import Service from './Service/Service.jsx'
 import SEOFaq from '../app/components/SEOFaq.tsx'
 import Footer from '../app/components/Footer.jsx'
 import SummerLeavesEffect from '../app/components/SummerLeavesEffect.jsx'
@@ -17,7 +17,7 @@ const page = () => {
       {/* <SnowEffect /> */}
       <Hero />
       <Gallery />
-      <Service />
+      {/* <Service /> */}
       <SEOFaq />
       <Footer />
       

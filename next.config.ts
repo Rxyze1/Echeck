@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    // Fix the quality warning
+    qualities: [75, 85],
+    
     // Enable modern formats for better compression (AVIF > WebP > fallback)
     formats: ['image/avif', 'image/webp'],
 
