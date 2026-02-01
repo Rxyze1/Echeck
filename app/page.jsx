@@ -6,14 +6,14 @@ import Gallery from './components/Gallery.jsx'
 import SEOFaq from '../app/components/SEOFaq.tsx'
 import Footer from '../app/components/Footer.jsx'
 import SummerLeavesEffect from '../app/components/SummerLeavesEffect.jsx'
-import SocialProofNotifications from '../app/components/SocialProofNotifications.jsx'
+//import SocialProofNotifications from '../app/components/SocialProofNotifications.jsx'
 
 const page = () => {
   return (
     <div className="relative overflow-hidden">
 
       <SummerLeavesEffect />
-      <SocialProofNotifications />
+      {/* <SocialProofNotifications /> */}
       {/* <SnowEffect /> */}
       <Hero />
       <Gallery />

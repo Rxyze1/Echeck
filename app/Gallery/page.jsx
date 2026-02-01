@@ -14,98 +14,137 @@ const page = () => {
   const prefersReducedMotion = useReducedMotion();
 
   // Profile data with imported images
-  const profiles = [
-    {
-      id: 1,
-      name: "Priya Sharma",
-      age: 23,
-      skills: ["Conversation", "Dancing", "Cooking", "Music"],
-      tags: ["Sweet", "Energetic", "Traditional"],
-      description: "A vibrant and cheerful companion who loves Indian classical dance, cooking traditional cuisine, and exploring new places. Always ready to make your day brighter!",
-      images: personsData[0].images,
-      videos: []
-    },
-    {
-      id: 2,
-      name: "Ananya Kapoor",
-      age: 25,
-      skills: ["Photography", "Art", "Yoga", "Travel"],
-      tags: ["Artistic", "Calm", "Nature Lover"],
-      description: "An artistic soul who finds beauty in everything. Perfect companion for cultural events, nature walks, and meaningful conversations about life and art.",
-      images: personsData[1].images,
-      videos: []
-    },
-    {
-      id: 3,
-      name: "Isha Patel",
-      age: 22,
-      skills: ["Music", "Singing", "Fashion", "Shopping"],
-      tags: ["Fashionista", "Singer", "Modern"],
-      description: "A music enthusiast with a passion for fashion. Love concerts, Bollywood music, and exploring the latest trends together!",
-      images: personsData[2].images,
-      videos: []
-    },
-    {
-      id: 4,
-      name: "Kavya Reddy",
-      age: 24,
-      skills: ["Fitness", "Sports", "Nutrition", "Wellness"],
-      tags: ["Athletic", "Healthy", "Motivational"],
-      description: "A fitness enthusiast who believes in a healthy lifestyle. Perfect gym buddy and motivational companion for your wellness journey!",
-      images: personsData[3].images,
-      videos: []
-    },
-    {
-      id: 5,
-      name: "Meera Singh",
-      age: 26,
-      skills: ["Business", "Fine Dining", "Travel", "Languages"],
-      tags: ["Sophisticated", "Elegant", "Professional"],
-      description: "An elegant and sophisticated companion for business events, fine dining, and cultural experiences. Well-versed in multiple languages and etiquette.",
-      images: personsData[4].images,
-      videos: []
-    },
-    {
-      id: 6,
-      name: "Riya Malhotra",
-      age: 21,
-      skills: ["Gaming", "Technology", "Social Media", "Content"],
-      tags: ["Tech Savvy", "Modern", "Creative"],
-      description: "A tech-savvy companion who loves social media, content creation, and staying updated with the latest trends. Perfect for events and casual hangouts!",
-      images: personsData[5].images,
-      videos: []
-    },
-    {
-      id: 7,
-      name: "Sanya Gupta",
-      age: 27,
-      skills: ["Literature", "Writing", "Poetry", "Culture"],
-      tags: ["Intellectual", "Traditional", "Gentle"],
-      description: "A gentle soul with a love for literature and traditional Indian arts. Perfect for quiet cafes, bookstores, and meaningful conversations.",
-      images: personsData[6].images,
-      videos: []
-    },
-    {
-      id: 8,
-      name: "Naina Verma",
-      age: 23,
-      skills: ["Baking", "Cooking", "Cafe Hopping", "Food"],
-      tags: ["Sweet", "Chef", "Friendly"],
-      description: "A culinary expert who creates delicious Indian and fusion dishes. Perfect for food tours, cooking sessions, and cozy dining experiences!",
-      images: personsData[7].images,
-      videos: []
-    },
-    {
-      id: 9,
-      name: "Diya Khanna",
-      age: 25,
-      skills: ["Dancing", "Events", "Social", "Entertainment"],
-      tags: ["Outgoing", "Social", "Fun"],
-      description: "An outgoing and energetic companion who loves cultural events, celebrations, and social gatherings. Your perfect plus-one for any occasion!",
-      images: personsData[8].images,
-      videos: []
-    },
-  ];
+ const profiles = [
+  {
+    id: 1,
+    name: "Priya Sharma",
+    age: 23,
+    skills: ["Deep French Kissing", "Sensual Dance", "Erotic Massage", "GFE + Intimate Play"],
+    tags: ["Sweet & Naughty", "Energetic", "Seductive", "Submissive Vibes"],
+    description: "I'm Priya, 23, and I fucking love cock. My tight pussy gets dripping wet the second I think about you pounding me. I deepthroat you balls-deep, gag on it, drool all over your shaft, then beg you to fuck my face harder. I grind my wet cunt on your dick during lap dances, then spread my legs so you can slam into me doggy style and cum deep inside. I swallow every load or let you paint my tits. Book me — I want your cock stretching my holes right now. 💦",
+    services: [
+      "GFE", "S-GFE", "BBBJ", "BJ", "69", "DATY", "COF", "COB", "HJ", "Strip-tease",
+      "Special Massage", "Doggie", "Extraball", "O-Level", "Completion", "Spending time in my rooms"
+    ],
+    images: personsData[0].images,
+    videos: []
+  },
+  {
+    id: 2,
+    name: "Ananya Kapoor",
+    age: 25,
+    skills: ["Erotic Photography", "Tantric Touch", "Sensual Yoga", "Body Worship"],
+    tags: ["Artistic Seductress", "Calm yet Wild", "Sensual", "Nature Lover"],
+    description: "Ananya, 25. My flexible body is made for fucking in every position. I suck your cock slow and deep while you watch me in yoga poses with my ass up. I love 69 — eat my soaked pussy while I deepthroat you until you cum down my throat. Ride me hard, slap my ass, pull my hair, fill my cunt with cum. I worship your dick with my tongue and lips, then beg you to pound me until I squirt. Message me — my pussy is throbbing for your cock. 🔥",
+    services: [
+      "GFE", "S-GFE", "Special Massage", "Strip-tease", "BBBJ", "69", "DATY", "COB",
+      "HJ", "O-Level", "Doggie", "Extraball", "Spending time in my rooms"
+    ],
+    images: personsData[1].images,
+    videos: []
+  },
+  {
+    id: 3,
+    name: "Isha Patel",
+    age: 22,
+    skills: ["Erotic Singing", "Striptease", "Fashion Play", "Naughty Roleplay"],
+    tags: ["Fashionista Slut", "Vocal Seductress", "Modern & Dirty"],
+    description: "Isha, 22 — I fucking love sucking dick. I strip naked, put on slutty outfits, then drop to my knees and deepthroat your cock while moaning like a whore. I let you face-fuck me until tears run down my face, then ride you reverse so you can watch my ass bounce while your dick stretches my tight pussy. Cum on my face, in my mouth, wherever — I swallow it all and beg for more. Fuck me hard, I'm your dirty little fashion slut. 😈",
+    services: [
+      "Strip-tease", "BBBJ", "BJ", "69", "COF", "COB", "GFE", "HJ", "O-Level",
+      "Doggie", "Extraball", "S-GFE", "Spending time in my rooms", "DT", "DSL"
+    ],
+    images: personsData[2].images,
+    videos: []
+  },
+  {
+    id: 4,
+    name: "Kavya Reddy",
+    age: 24,
+    skills: ["Athletic Sex", "Sweaty Play", "Body Worship", "Endurance Sessions"],
+    tags: ["Fit & Filthy", "Gym Bunny", "Motivational & Naughty"],
+    description: "Kavya, 24. My tight athletic body can take a hard pounding for hours. I deepthroat your cock after a sweaty workout, then bend over so you can fuck my pussy and ass from behind. I ride you like a machine, squeezing your dick with my cunt until you explode inside me. Multiple rounds — cum in my mouth, then fuck me again. I'm your gym slut who loves getting railed until we both collapse. Come drain your balls in me. 💦",
+    services: [
+      "GFE", "BBBJ", "69", "Doggie", "Extraball", "COB", "HJ", "DATY", "O-Level",
+      "Special Massage", "S-GFE", "Spending time in my rooms", "Completion"
+    ],
+    images: personsData[3].images,
+    videos: []
+  },
+  {
+    id: 5,
+    name: "Meera Singh",
+    age: 26,
+    skills: ["Luxury GFE", "Fine Dining Seduction", "Multi-language Dirty Talk", "Elite Companionship"],
+    tags: ["Sophisticated Slut", "Elegant", "High-Class Whore"],
+    description: "Meera, 26. Classy by day, filthy whore by night. I deepthroat your cock under the table at dinner, then take you to the hotel to get fucked hard in every hole. I love cum on my face, tits, inside my pussy — no limits. Pound me doggy, make me scream while I beg for your load. I'm your high-class cum dump who craves raw dick. Book me now. ✨🍆",
+    services: [
+      "GFE", "S-GFE", "BBBJ", "BJ", "69", "COF", "COB", "HJ", "O-Level",
+      "Special Massage", "Strip-tease", "Doggie", "Extraball", "Spending time in my rooms"
+    ],
+    images: personsData[4].images,
+    videos: []
+  },
+  {
+    id: 6,
+    name: "Riya Malhotra",
+    age: 21,
+    skills: ["Naughty Content Creation", "Tech Roleplay", "Social Media Tease", "Cyber + Real Play"],
+    tags: ["Tech-Savvy Slut", "Modern", "Creative & Dirty"],
+    description: "Riya, 21. I love filming myself getting fucked. I deepthroat your cock on camera, ride you reverse while moaning \"fuck my tight pussy daddy\", then let you cum all over my face for the video. I sext you dirty pics all day, then meet to get railed hard. My young cunt grips your dick so tight — cum inside or on me, I don't care. I'm your digital fucktoy. 📱🍆",
+    services: [
+      "GFE", "BBBJ", "69", "COF", "COB", "Strip-tease", "HJ", "O-Level",
+      "Doggie", "Extraball", "S-GFE", "Spending time in my rooms", "DT"
+    ],
+    images: personsData[5].images,
+    videos: []
+  },
+  {
+    id: 7,
+    name: "Sanya Gupta",
+    age: 27,
+    skills: ["Erotic Storytelling", "Sensual Poetry", "Slow Tease", "Intimate GFE"],
+    tags: ["Intellectual Seductress", "Gentle yet Filthy", "Romantic Whore"],
+    description: "Sanya, 27. I talk dirty while I suck your cock slow and deep. Then I spread my legs and beg you to fuck my wet pussy hard. I love getting pounded doggy, feeling your balls slap against me, then swallowing your cum or letting you fill my cunt. Gentle in public, total whore in bed — use my holes however you want. Come fuck me senseless. 📖🍆",
+    services: [
+      "GFE", "S-GFE", "BBBJ", "69", "DATY", "COB", "HJ", "Special Massage",
+      "O-Level", "Strip-tease", "Doggie", "Spending time in my rooms", "Completion"
+    ],
+    images: personsData[6].images,
+    videos: []
+  },
+  {
+    id: 8,
+    name: "Naina Verma",
+    age: 23,
+    skills: ["Erotic Baking", "Food Play", "Sensual Dining", "Messy Fun"],
+    tags: ["Sweet & Dirty", "Naughty Chef", "Cum Play Vibes"],
+    description: "Naina, 23. I lick whipped cream off your cock, then deepthroat you until you cum down my throat. Smear chocolate on my tits and fuck them, then pound my pussy while I moan like a slut. I love messy sex — cum on my face, in my mouth, inside me. My tight cunt is always ready for hard fucking. Come get sticky with me. 🍰🍆",
+    services: [
+      "GFE", "BBBJ", "69", "COF", "COB", "HJ", "DATY", "O-Level",
+      "Special Massage", "Doggie", "Extraball", "S-GFE", "Spending time in my rooms"
+    ],
+    images: personsData[7].images,
+    videos: []
+  },
+  {
+    id: 9,
+    name: "Diya Khanna",
+    age: 25,
+    skills: ["Party Girl", "Group Play Fantasy", "Wild Nights", "Dance Floor Seduction"],
+    tags: ["Outgoing Slut", "Party Animal", "Fun & Filthy"],
+    description: "Diya, 25. I grind my wet pussy on you at parties, no panties, then drag you to fuck me hard in the bathroom. I deepthroat you in risky places, take it doggy while music blasts, and love duos — two sluts sucking and riding your cock together. Cum on our faces, in our pussies, anywhere. I'm your party fucktoy — stamina required. 🎉🍆",
+    services: [
+      "GFE", "BBBJ", "Strip-tease", "69", "COF", "COB", "HJ", "O-Level",
+      "Doggie", "Extraball", "Duo Sandwich", "S-GFE", "Spending time in my rooms", "ANAL"
+    ],
+    images: personsData[8].images,
+    videos: []
+  },
+];
+
+
+
 
   // Smoke particles for background animation
   const smokeParticles = useMemo(() => {

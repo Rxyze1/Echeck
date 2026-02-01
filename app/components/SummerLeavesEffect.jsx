@@ -12,116 +12,120 @@ export default function SummerLeavesEffect() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Detect mobile/low-end devices
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isLowEnd = navigator.hardwareConcurrency ? navigator.hardwareConcurrency <= 4 : false;
-    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Device detection
+    const isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    const isLowEnd = navigator.hardwareConcurrency
+      ? navigator.hardwareConcurrency <= 4
+      : false;
+    const isReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
-    // Adjust particle count based on device
     const getParticleCount = () => {
-      if (isReducedMotion) return 20;
-      if (isMobile || isLowEnd) return 30;
-      return 50; // Desktop
+      if (isReducedMotion) return 15;
+      if (isMobile || isLowEnd) return 25;
+      return 45;
     };
 
-    // Set canvas size
+    // Resize canvas (throttled)
+    let resizeTimeout;
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }, 120);
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Reddish/Autumn colors
+    // Colors
     const leafColors = [
-      'rgba(220, 20, 60, 0.7)',    // Crimson
-      'rgba(255, 69, 0, 0.7)',     // Red-orange
-      'rgba(255, 99, 71, 0.7)',    // Tomato
-      'rgba(255, 140, 0, 0.7)',    // Dark orange
-      'rgba(205, 92, 92, 0.7)',    // Indian red
-      'rgba(240, 128, 128, 0.6)',  // Light coral
+      'rgba(220, 20, 60, 0.7)',
+      'rgba(255, 69, 0, 0.7)',
+      'rgba(255, 99, 71, 0.7)',
+      'rgba(255, 140, 0, 0.7)',
+      'rgba(205, 92, 92, 0.7)',
+      'rgba(240, 128, 128, 0.6)',
     ];
 
-    // Optimized Leaf class
+    // Fast Leaf class
     class Leaf {
       constructor() {
+        this.reset(true);
+      }
+
+      reset(first = false) {
         this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height - canvas.height;
-        this.size = Math.random() * 8 + 4; // Smaller: 4-12px (was 8-23px)
-        this.speedY = Math.random() * 1.2 + 0.4; // Slightly slower for smooth animation
-        this.speedX = Math.random() * 1.5 - 0.75;
-        this.rotation = Math.random() * Math.PI * 2;
-        this.rotationSpeed = (Math.random() - 0.5) * 0.08; // Slightly slower rotation
-        this.swingSpeed = Math.random() * 0.015 + 0.008;
-        this.swingDistance = Math.random() * 1.5 + 0.8;
-        this.color = leafColors[Math.floor(Math.random() * leafColors.length)];
+        this.y =
+          first === true
+            ? Math.random() * canvas.height
+            : -20;
+
+        this.size = Math.random() * 7 + 4;
+        this.speedY = Math.random() * 1.1 + 0.4;
+        this.speedX = (Math.random() - 0.5) * 1.2;
+
+        // Precompute swing parameters
+        this.swingPhase = Math.random() * Math.PI * 2;
+        this.swingSpeed = Math.random() * 0.013 + 0.007;
+        this.swingDist = Math.random() * 1.2 + 0.7;
+
+        this.rot = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.065;
+
+        this.color = leafColors[(Math.random() * leafColors.length) | 0];
       }
 
       update() {
         this.y += this.speedY;
-        this.x += Math.sin(this.y * this.swingSpeed) * this.swingDistance;
         this.x += this.speedX;
-        this.rotation += this.rotationSpeed;
 
-        if (this.y > canvas.height + 20) {
-          this.y = -20;
-          this.x = Math.random() * canvas.width;
-        }
+        // Precomputed lightweight swing
+        this.swingPhase += this.swingSpeed;
+        this.x += Math.sin(this.swingPhase) * this.swingDist;
 
-        if (this.x > canvas.width + 20) {
-          this.x = -20;
-        } else if (this.x < -20) {
-          this.x = canvas.width + 20;
-        }
+        this.rot += this.rotSpeed;
+
+        if (this.y > canvas.height + 25) this.reset();
+        if (this.x > canvas.width + 25) this.x = -20;
+        else if (this.x < -25) this.x = canvas.width + 20;
       }
 
       draw() {
-        if (!ctx) return;
-        
         ctx.save();
         ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
-
-        // Simplified leaf shape for better performance
-        ctx.beginPath();
-        ctx.moveTo(0, -this.size / 2);
-        
-        // Right side
-        ctx.quadraticCurveTo(
-          this.size / 2, 
-          -this.size / 4, 
-          this.size / 3, 
-          this.size / 2
-        );
-        
-        // Bottom
-        ctx.quadraticCurveTo(0, this.size / 3, 0, this.size / 2);
-        
-        // Left side
-        ctx.quadraticCurveTo(
-          -this.size / 3, 
-          this.size / 2, 
-          -this.size / 3, 
-          this.size / 2
-        );
-        
-        ctx.quadraticCurveTo(
-          -this.size / 2, 
-          -this.size / 4, 
-          0, 
-          -this.size / 2
-        );
-
+        ctx.rotate(this.rot);
         ctx.fillStyle = this.color;
+
+        // Much lighter path
+        const s = this.size;
+        ctx.beginPath();
+        ctx.moveTo(0, -s * 0.5);
+        ctx.quadraticCurveTo(
+          s * 0.4,
+          -s * 0.2,
+          s * 0.25,
+          s * 0.45
+        );
+        ctx.quadraticCurveTo(0, s * 0.3, -s * 0.25, s * 0.45);
+        ctx.quadraticCurveTo(
+          -s * 0.4,
+          -s * 0.2,
+          0,
+          -s * 0.5
+        );
         ctx.fill();
-        
-        // Skip vein drawing on mobile for better performance
+
         if (!isMobile) {
-          ctx.strokeStyle = `rgba(0, 0, 0, 0.2)`;
-          ctx.lineWidth = 0.3;
+          ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+          ctx.lineWidth = 0.25;
           ctx.beginPath();
-          ctx.moveTo(0, -this.size / 2);
-          ctx.lineTo(0, this.size / 2);
+          ctx.moveTo(0, -s * 0.5);
+          ctx.lineTo(0, s * 0.45);
           ctx.stroke();
         }
 
@@ -129,48 +133,39 @@ export default function SummerLeavesEffect() {
       }
     }
 
-    // Create leaves with optimized count
-    const leaves = [];
-    const numberOfLeaves = getParticleCount();
+    const leaves = Array.from(
+      { length: getParticleCount() },
+      () => new Leaf()
+    );
 
-    for (let i = 0; i < numberOfLeaves; i++) {
-      leaves.push(new Leaf());
-    }
-
-    // Optimized animation loop
     let animationFrameId;
     let lastTime = 0;
-    const targetFPS = isMobile ? 30 : 60; // Lower FPS on mobile
+    const targetFPS = isMobile ? 30 : 60;
     const frameInterval = 1000 / targetFPS;
 
-    const animate = (currentTime) => {
+    const animate = (t) => {
       animationFrameId = requestAnimationFrame(animate);
 
-      const deltaTime = currentTime - lastTime;
+      const delta = t - lastTime;
+      if (delta < frameInterval) return;
 
-      // Throttle frame rate for mobile
-      if (deltaTime < frameInterval) {
-        return;
-      }
-
-      lastTime = currentTime - (deltaTime % frameInterval);
+      lastTime = t - (delta % frameInterval);
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      leaves.forEach((leaf) => {
+      for (let i = 0; i < leaves.length; i++) {
+        const leaf = leaves[i];
         leaf.update();
         leaf.draw();
-      });
+      }
     };
 
     animate(0);
 
-    // Cleanup
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      clearTimeout(resizeTimeout);
     };
   }, []);
 
