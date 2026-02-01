@@ -93,34 +93,60 @@ const Areasinjaipur = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.015,
-        delayChildren: 0.1,
+        staggerChildren: 0.012,
+        delayChildren: 0.15,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.7, y: 15 },
+    hidden: { opacity: 0, scale: 0.6, y: 20 },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.4, ease: 'easeOut' },
+      transition: { duration: 0.5, ease: 'easeOut' },
     },
   };
 
   return (
-    <section className="relative min-h-screen py-24 bg-black overflow-hidden">
+    <section className="relative min-h-screen py-28 bg-black overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-950 to-black pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-radial from-red-900/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-radial from-red-900/15 via-transparent to-transparent pointer-events-none" />
       
-      {/* Animated Background Circles */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-red-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+      {/* Animated Background Orbs */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-900/30 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-900/25 rounded-full mix-blend-screen filter blur-3xl opacity-25 animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-900/10 rounded-full mix-blend-overlay filter blur-3xl opacity-10" />
 
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
-        {/* AREAS GRID - PILL SHAPED BUTTONS */}
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <motion.h2
+            className="text-4xl md:text-5xl lg:text-6xl font-black mb-4"
+          >
+            <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
+              Service Areas
+            </span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 text-lg"
+          >
+            Available Across All Zones
+          </motion.p>
+        </motion.div>
+
+        {/* AREAS GRID - GLASS MORPHISM */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -132,58 +158,133 @@ const Areasinjaipur = () => {
             <motion.div
               key={idx}
               variants={itemVariants}
-              whileHover={{ scale: 1.15, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="relative group"
+              whileHover={{ scale: 1.18, y: -6 }}
+              whileTap={{ scale: 0.88 }}
+              className="relative group cursor-pointer"
             >
-              {/* Glow Effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-full blur opacity-0 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse group-hover:animate-none" />
+              {/* Outer Glow - Red */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10 group-hover:blur-lg" />
+
+              {/* Inner Shadow Glow */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-full blur opacity-0 group-hover:opacity-80 transition-all duration-400 -z-10" />
               
-              {/* Button */}
-              <button className="relative px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-bold text-xs sm:text-sm md:text-base border-2 border-red-400/60 shadow-xl shadow-red-600/40 hover:shadow-red-500/80 transition-all duration-300 overflow-hidden group/btn whitespace-nowrap">
-                {/* Shine Effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 transform translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500" />
+              {/* Button with Glass Effect */}
+              <button className="relative px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm md:text-base whitespace-nowrap overflow-hidden group/btn transition-all duration-300">
                 
-                {/* Background Hover */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500 to-red-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                {/* Base Background - Dark with transparency */}
+                <div className="absolute inset-0 rounded-full bg-black/40 backdrop-blur-lg border-2 border-red-500/60 group-hover/btn:border-red-400/100 transition-all duration-300" />
                 
-                {/* Text */}
-                <span className="relative flex items-center justify-center">{area}</span>
+                {/* Hover Glass Effect - Red tinted */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-600/40 to-red-500/20 opacity-0 group-hover/btn:opacity-100 backdrop-blur-xl transition-all duration-300 mix-blend-overlay" />
+
+                {/* Shimmer Effect */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover/btn:opacity-60 transform -translate-x-full group-hover/btn:translate-x-full transition-all duration-700" />
+                
+                {/* Text with Gradient */}
+                <span className="relative flex items-center justify-center bg-gradient-to-r from-white to-red-200 bg-clip-text text-transparent group-hover/btn:from-white group-hover/btn:to-white group-hover/btn:text-white transition-all">
+                  {area}
+                </span>
               </button>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Stats at bottom */}
+        {/* Stats Section - Glass Morphism */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="mt-24 flex justify-center"
+        >
+          <div className="relative group">
+            {/* Glow Background */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-500 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10" />
+            
+            <div className="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-10 px-8 sm:px-12 py-6 sm:py-8 rounded-2xl bg-black/50 backdrop-blur-2xl border-2 border-red-500/50 group-hover:border-red-400/80 transition-all duration-300">
+              {/* Stat 1 */}
+              <motion.div
+                className="text-center"
+                whileHover={{ scale: 1.1 }}
+              >
+                <p className="text-3xl md:text-4xl font-black bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent drop-shadow-lg">
+                  88+
+                </p>
+                <p className="text-sm md:text-base text-gray-300 font-semibold mt-1 tracking-wide">Areas Covered</p>
+              </motion.div>
+
+              {/* Divider */}
+              <div className="hidden sm:block w-px h-12 bg-gradient-to-b from-red-600/30 via-red-500/60 to-red-600/30" />
+              <div className="sm:hidden w-24 h-px bg-gradient-to-r from-red-600/30 via-red-500/60 to-red-600/30" />
+
+              {/* Stat 2 */}
+              <motion.div
+                className="text-center"
+                whileHover={{ scale: 1.1 }}
+              >
+                <p className="text-3xl md:text-4xl font-black bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent drop-shadow-lg">
+                  24/7
+                </p>
+                <p className="text-sm md:text-base text-gray-300 font-semibold mt-1 tracking-wide">Available</p>
+              </motion.div>
+
+              {/* Divider */}
+              <div className="hidden sm:block w-px h-12 bg-gradient-to-b from-red-600/30 via-red-500/60 to-red-600/30" />
+              <div className="sm:hidden w-24 h-px bg-gradient-to-r from-red-600/30 via-red-500/60 to-red-600/30" />
+
+              {/* Stat 3 */}
+              <motion.div
+                className="text-center"
+                whileHover={{ scale: 1.1 }}
+              >
+                <p className="text-3xl md:text-4xl font-black bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent drop-shadow-lg">
+                  100%
+                </p>
+                <p className="text-sm md:text-base text-gray-300 font-semibold mt-1 tracking-wide">Verified</p>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 text-center"
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="flex flex-col sm:flex-row gap-6 justify-center mt-20"
         >
-          <div className="inline-flex items-center gap-6 px-8 py-4 rounded-full bg-black/80 backdrop-blur-xl border border-red-500/30">
-            <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-                88+
-              </p>
-              <p className="text-xs md:text-sm text-gray-400">Areas Covered</p>
-            </div>
-            <div className="w-px h-8 bg-red-500/30" />
-            <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-                24/7
-              </p>
-              <p className="text-xs md:text-sm text-gray-400">Available</p>
-            </div>
-            <div className="w-px h-8 bg-red-500/30" />
-            <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-                100%
-              </p>
-              <p className="text-xs md:text-sm text-gray-400">Verified</p>
-            </div>
-          </div>
+          <a
+            href="https://wa.me/918058457070"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative px-10 py-4 rounded-full font-bold text-white text-base bg-gradient-to-r from-green-600 to-green-500 border-2 border-green-400/60 hover:border-green-300 shadow-xl shadow-green-600/50 overflow-hidden group"
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <span className="relative flex items-center gap-2">
+                <span>💬</span>
+                WhatsApp Now
+              </span>
+            </motion.button>
+          </a>
+
+          <a href="tel:+918058457070">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative px-10 py-4 rounded-full font-bold text-white text-base backdrop-blur-xl bg-black/50 border-2 border-red-500/70 hover:border-red-400 hover:bg-red-600/20 transition-all shadow-xl shadow-red-600/40 overflow-hidden group"
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-15 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <span className="relative flex items-center gap-2">
+                <span>📞</span>
+                Call: 8058457070
+              </span>
+            </motion.button>
+          </a>
         </motion.div>
       </div>
 
