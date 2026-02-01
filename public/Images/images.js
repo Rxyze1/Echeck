@@ -41,8 +41,9 @@ const personsData = [
       { url: "/Images/AI-Person-4/1.jpg", public_id: "img1" },
       { url: "/Images/AI-Person-4/2.jpg", public_id: "img2" },
       { url: "/Images/AI-Person-4/3.jpg", public_id: "img3" },
+      { url: "/Images/AI-Person-4/4.jpg", public_id: "img4" },
     ],
-    imageCount: 3,
+    imageCount: 4,
   },
   {
     id: 5,
@@ -59,8 +60,8 @@ const personsData = [
     id: 6,
     name: "Person Six",
     images: [
-      { url: "/Images/AI-Person-6/1.png", public_id: "img1" },
-      { url: "/Images/AI-Person-6/2.png", public_id: "img2" },
+      { url: "/Images/AI-Person-6/1.jpg", public_id: "img1" },
+      { url: "/Images/AI-Person-6/2.jpg", public_id: "img2" },
       { url: "/Images/AI-Person-6/3.jpg", public_id: "img3" },
       { url: "/Images/AI-Person-6/4.jpg", public_id: "img4" },
     ],
