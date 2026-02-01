@@ -10,8 +10,8 @@ import LOGO from '../../public/logo/LOGO.png';
 // CONFIGURATION
 // ============================================
 const CONFIG = {
-  phoneNumber: '+918058457070',
-  whatsappNumber: '8058457070',
+  phoneNumber: '+910000000000',
+  whatsappNumber: '00000000000',
   whatsappMessage: "Hi! I'm interested in your premium service",
 };
 
