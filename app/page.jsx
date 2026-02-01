@@ -7,6 +7,7 @@ import SEOFaq from '../app/components/SEOFaq.tsx'
 import Footer from '../app/components/Footer.jsx'
 import SummerLeavesEffect from '../app/components/SummerLeavesEffect.jsx'
 //import SocialProofNotifications from '../app/components/SocialProofNotifications.jsx'
+import Areainjaipur from '../app/components/Areasinjaipur.jsx'
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
       <Hero />
       <Gallery />
       {/* <Service /> */}
+      <Areainjaipur />
       <SEOFaq />
       <Footer />
       
