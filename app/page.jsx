@@ -8,6 +8,8 @@ import Footer from '../app/components/Footer.jsx'
 import SummerLeavesEffect from '../app/components/SummerLeavesEffect.jsx'
 //import SocialProofNotifications from '../app/components/SocialProofNotifications.jsx'
 import Areainjaipur from '../app/components/Areasinjaipur.jsx'
+import HeroActions from '../app/components/HeroActions.jsx'
+
 
 const page = () => {
   return (
@@ -17,6 +19,8 @@ const page = () => {
       {/* <SocialProofNotifications /> */}
       {/* <SnowEffect /> */}
       <Hero />
+      <HeroActions />
+      
       <Gallery />
       {/* <Service /> */}
       
