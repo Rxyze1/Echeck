@@ -18,10 +18,10 @@ const Gallery = () => {
   {
     id: 1,
     name: "Priya Sharma",
-    age: 23,
+    age: 21,
     skills: ["Deep French Kissing", "Sensual Dance", "Erotic Massage", "GFE + Intimate Play"],
     tags: ["Sweet & Naughty", "Energetic", "Seductive", "Submissive Vibes"],
-    description: "I'm Priya, 23, and I fucking love cock. My tight pussy gets dripping wet the second I think about you pounding me. I deepthroat you balls-deep, gag on it, drool all over your shaft, then beg you to fuck my face harder. I grind my wet cunt on your dick during lap dances, then spread my legs so you can slam into me doggy style and cum deep inside. I swallow every load or let you paint my tits. Book me — I want your cock stretching my holes right now. 💦",
+    description: "I'm Priya, 21, and I fucking love cock. My tight pussy gets dripping wet the second I think about you pounding me. I deepthroat you balls-deep, gag on it, drool all over your shaft, then beg you to fuck my face harder. I grind my wet cunt on your dick during lap dances, then spread my legs so you can slam into me doggy style and cum deep inside. I swallow every load or let you paint my tits. Book me — I want your cock stretching my holes right now. 💦",
     services: [
       "GFE", "S-GFE", "BBBJ", "BJ", "69", "DATY", "COF", "COB", "HJ", "Strip-tease",
       "Special Massage", "Doggie", "Extraball", "O-Level", "Completion", "Spending time in my rooms"
@@ -32,10 +32,10 @@ const Gallery = () => {
   {
     id: 2,
     name: "Ananya Kapoor",
-    age: 25,
+    age: 22,
     skills: ["Erotic Photography", "Tantric Touch", "Sensual Yoga", "Body Worship"],
     tags: ["Artistic Seductress", "Calm yet Wild", "Sensual", "Nature Lover"],
-    description: "Ananya, 25. My flexible body is made for fucking in every position. I suck your cock slow and deep while you watch me in yoga poses with my ass up. I love 69 — eat my soaked pussy while I deepthroat you until you cum down my throat. Ride me hard, slap my ass, pull my hair, fill my cunt with cum. I worship your dick with my tongue and lips, then beg you to pound me until I squirt. Message me — my pussy is throbbing for your cock. 🔥",
+    description: "Ananya, 22 . My flexible body is made for fucking in every position. I suck your cock slow and deep while you watch me in yoga poses with my ass up. I love 69 — eat my soaked pussy while I deepthroat you until you cum down my throat. Ride me hard, slap my ass, pull my hair, fill my cunt with cum. I worship your dick with my tongue and lips, then beg you to pound me until I squirt. Message me — my pussy is throbbing for your cock. 🔥",
     services: [
       "GFE", "S-GFE", "Special Massage", "Strip-tease", "BBBJ", "69", "DATY", "COB",
       "HJ", "O-Level", "Doggie", "Extraball", "Spending time in my rooms"
@@ -60,10 +60,10 @@ const Gallery = () => {
   {
     id: 4,
     name: "Kavya Reddy",
-    age: 24,
+    age: 20,
     skills: ["Athletic Sex", "Sweaty Play", "Body Worship", "Endurance Sessions"],
     tags: ["Fit & Filthy", "Gym Bunny", "Motivational & Naughty"],
-    description: "Kavya, 24. My tight athletic body can take a hard pounding for hours. I deepthroat your cock after a sweaty workout, then bend over so you can fuck my pussy and ass from behind. I ride you like a machine, squeezing your dick with my cunt until you explode inside me. Multiple rounds — cum in my mouth, then fuck me again. I'm your gym slut who loves getting railed until we both collapse. Come drain your balls in me. 💦",
+    description: "Kavya, 20. My tight athletic body can take a hard pounding for hours. I deepthroat your cock after a sweaty workout, then bend over so you can fuck my pussy and ass from behind. I ride you like a machine, squeezing your dick with my cunt until you explode inside me. Multiple rounds — cum in my mouth, then fuck me again. I'm your gym slut who loves getting railed until we both collapse. Come drain your balls in me. 💦",
     services: [
       "GFE", "BBBJ", "69", "Doggie", "Extraball", "COB", "HJ", "DATY", "O-Level",
       "Special Massage", "S-GFE", "Spending time in my rooms", "Completion"
@@ -74,10 +74,10 @@ const Gallery = () => {
   {
     id: 5,
     name: "Meera Singh",
-    age: 26,
+    age: 19,
     skills: ["Luxury GFE", "Fine Dining Seduction", "Multi-language Dirty Talk", "Elite Companionship"],
     tags: ["Sophisticated Slut", "Elegant", "High-Class Whore"],
-    description: "Meera, 26. Classy by day, filthy whore by night. I deepthroat your cock under the table at dinner, then take you to the hotel to get fucked hard in every hole. I love cum on my face, tits, inside my pussy — no limits. Pound me doggy, make me scream while I beg for your load. I'm your high-class cum dump who craves raw dick. Book me now. ✨🍆",
+    description: "Meera, 19. Classy by day, filthy whore by night. I deepthroat your cock under the table at dinner, then take you to the hotel to get fucked hard in every hole. I love cum on my face, tits, inside my pussy — no limits. Pound me doggy, make me scream while I beg for your load. I'm your high-class cum dump who craves raw dick. Book me now. ✨🍆",
     services: [
       "GFE", "S-GFE", "BBBJ", "BJ", "69", "COF", "COB", "HJ", "O-Level",
       "Special Massage", "Strip-tease", "Doggie", "Extraball", "Spending time in my rooms"
@@ -88,10 +88,10 @@ const Gallery = () => {
   {
     id: 6,
     name: "Riya Malhotra",
-    age: 21,
+    age: 23,
     skills: ["Naughty Content Creation", "Tech Roleplay", "Social Media Tease", "Cyber + Real Play"],
     tags: ["Tech-Savvy Slut", "Modern", "Creative & Dirty"],
-    description: "Riya, 21. I love filming myself getting fucked. I deepthroat your cock on camera, ride you reverse while moaning \"fuck my tight pussy daddy\", then let you cum all over my face for the video. I sext you dirty pics all day, then meet to get railed hard. My young cunt grips your dick so tight — cum inside or on me, I don't care. I'm your digital fucktoy. 📱🍆",
+    description: "Riya, 23. I love filming myself getting fucked. I deepthroat your cock on camera, ride you reverse while moaning \"fuck my tight pussy daddy\", then let you cum all over my face for the video. I sext you dirty pics all day, then meet to get railed hard. My young cunt grips your dick so tight — cum inside or on me, I don't care. I'm your digital fucktoy. 📱🍆",
     services: [
       "GFE", "BBBJ", "69", "COF", "COB", "Strip-tease", "HJ", "O-Level",
       "Doggie", "Extraball", "S-GFE", "Spending time in my rooms", "DT"
@@ -115,7 +115,7 @@ const Gallery = () => {
   },
   {
     id: 8,
-    name: "Naina Verma",
+    name: "Naina Choudhary",
     age: 23,
     skills: ["Erotic Baking", "Food Play", "Sensual Dining", "Messy Fun"],
     tags: ["Sweet & Dirty", "Naughty Chef", "Cum Play Vibes"],
@@ -130,10 +130,10 @@ const Gallery = () => {
   {
     id: 9,
     name: "Diya Khanna",
-    age: 25,
+    age: 21,
     skills: ["Party Girl", "Group Play Fantasy", "Wild Nights", "Dance Floor Seduction"],
     tags: ["Outgoing Slut", "Party Animal", "Fun & Filthy"],
-    description: "Diya, 25. I grind my wet pussy on you at parties, no panties, then drag you to fuck me hard in the bathroom. I deepthroat you in risky places, take it doggy while music blasts, and love duos — two sluts sucking and riding your cock together. Cum on our faces, in our pussies, anywhere. I'm your party fucktoy — stamina required. 🎉🍆",
+    description: "Diya, 21. I grind my wet pussy on you at parties, no panties, then drag you to fuck me hard in the bathroom. I deepthroat you in risky places, take it doggy while music blasts, and love duos — two sluts sucking and riding your cock together. Cum on our faces, in our pussies, anywhere. I'm your party fucktoy — stamina required. 🎉🍆",
     services: [
       "GFE", "BBBJ", "Strip-tease", "69", "COF", "COB", "HJ", "O-Level",
       "Doggie", "Extraball", "Duo Sandwich", "S-GFE", "Spending time in my rooms", "ANAL"
