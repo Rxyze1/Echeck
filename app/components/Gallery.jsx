@@ -115,7 +115,7 @@ const Gallery = () => {
   },
   {
     id: 8,
-    name: "Naina Choudhary",
+    name: "Naina Shingh",
     age: 23,
     skills: ["Erotic Baking", "Food Play", "Sensual Dining", "Messy Fun"],
     tags: ["Sweet & Dirty", "Naughty Chef", "Cum Play Vibes"],
@@ -141,6 +141,52 @@ const Gallery = () => {
     images: personsData[8].images,
     videos: []
   },
+
+  {
+    id: 10,
+    name: "Mayra Choudhary",
+    age: 22,
+    skills: ["Party Girl", "Group Play Fantasy", "Wild Nights", "Dance Floor Seduction"],
+    tags: ["Outgoing Slut", "Party Animal", "Fun & Filthy"],
+    description: "Mayra, 22. I grind my wet pussy on you at parties, no panties, then drag you to fuck me hard in the bathroom. I deepthroat you in risky places, take it doggy while music blasts, and love duos — two sluts sucking and riding your cock together. Cum on our faces, in our pussies, anywhere. I'm your party fucktoy — stamina required. 🎉🍆",
+    services: [
+      "GFE", "BBBJ", "Strip-tease", "69", "COF", "COB", "HJ", "O-Level",
+      "Doggie", "Extraball", "Duo Sandwich", "S-GFE", "Spending time in my rooms", "ANAL"
+    ],
+    images: personsData[9].images,
+    videos: []
+  },
+
+   {
+    id: 11,
+    name: "Miss Rupa Jain -(House Wife)",
+    age: 27,
+    skills: ["Erotic Baking", "Food Play", "Sensual Dining", "Messy Fun"],
+    tags: ["Sweet & Dirty", "Naughty Chef", "Cum Play Vibes"],
+    description: "Rupa, 27. I lick whipped cream off your cock, then deepthroat you until you cum down my throat. Smear chocolate on my tits and fuck them, then pound my pussy while I moan like a slut. I love messy sex — cum on my face, in my mouth, inside me. My tight cunt is always ready for hard fucking. Come get sticky with me. 🍰🍆",
+    services: [
+      "GFE", "BBBJ", "69", "COF", "COB", "HJ", "DATY", "O-Level",
+      "Special Massage", "Doggie", "Extraball", "S-GFE", "Spending time in my rooms"
+    ],
+    images: personsData[10].images,
+    videos: []
+  },
+
+   {
+    id: 12,
+    name: "Miss Shalini Sharma -(House Wife)",
+    age: 28,
+    skills: ["Erotic Baking", "Food Play", "Sensual Dining", "Messy Fun"],
+    tags: ["Sweet & Dirty", "Naughty Chef", "Cum Play Vibes"],
+    description: "Shalini, 28. I lick whipped cream off your cock, then deepthroat you until you cum down my throat. Smear chocolate on my tits and fuck them, then pound my pussy while I moan like a slut. I love messy sex — cum on my face, in my mouth, inside me. My tight cunt is always ready for hard fucking. Come get sticky with me. 🍰🍆",
+    services: [
+      "GFE", "BBBJ", "69", "COF", "COB", "HJ", "DATY", "O-Level",
+      "Special Massage", "Doggie", "Extraball", "S-GFE", "Spending time in my rooms"
+    ],
+    images: personsData[11].images,
+    videos: []
+  },
+
 ];
 
   // Smoke particles for background animation

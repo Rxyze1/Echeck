@@ -100,6 +100,44 @@ const personsData = [
     ],
     imageCount: 4,
   },
+
+
+  {
+    id: 10,
+    name: "Person Ten",
+    images: [
+      { url: "/Images/AI-Person-10/1.jpg", public_id: "img1" },
+      { url: "/Images/AI-Person-10/2.jpg", public_id: "img2" },
+      { url: "/Images/AI-Person-10/3.jpg", public_id: "img3" },
+      { url: "/Images/AI-Person-10/4.jpg", public_id: "img4" },
+    ],
+    imageCount: 4,
+  },
+
+   {
+    id: 11,
+    name: "Person Eleven",
+    images: [
+      { url: "/Images/AI-Person-11/1.jpeg", public_id: "img1" },
+      { url: "/Images/AI-Person-11/2.jpeg", public_id: "img2" },
+      { url: "/Images/AI-Person-11/3.jpeg", public_id: "img3" },
+    ],
+    imageCount: 5,
+  },
+
+    {
+    id: 12,
+    name: "Person Twelve",
+    images: [
+      { url: "/Images/AI-Person-12/1.jpeg", public_id: "img1" },
+      { url: "/Images/AI-Person-12/2.jpeg", public_id: "img2" },
+      { url: "/Images/AI-Person-12/3.jpeg", public_id: "img3" },
+      { url: "/Images/AI-Person-12/4.jpeg", public_id: "img4" },
+    ],
+    imageCount: 5,
+  },
+
+
 ];
 
 export default personsData;
