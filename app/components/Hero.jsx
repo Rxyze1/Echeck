@@ -15,7 +15,6 @@ const Hero = () => {
   });
 
   const [isMobile, setIsMobile] = useState(false);
-  const [containerHeight, setContainerHeight] = useState('60vh');
 
   const containerRef = useRef(null);
   const videoRef = useRef(null);
@@ -45,8 +44,10 @@ const Hero = () => {
 
     let newHeight;
     if (window.innerWidth < 768) {
+      // Mobile
       newHeight = Math.min(calculatedHeight, window.innerHeight * 0.75);
     } else {
+      // Desktop
       newHeight = window.innerHeight * 0.8;
     }
 
@@ -65,16 +66,6 @@ const Hero = () => {
       ease: 'power2.out',
     });
 
-    // ✅ Overlay fade-in
-    const overlayElement = isMobile ? mobileOverlayRef.current : overlayRef.current;
-    if (overlayElement) {
-      gsap.to(overlayElement, {
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power2.out',
-      });
-    }
-
     setVideoState(prev => ({
       ...prev,
       isPlayable: true,
@@ -82,7 +73,7 @@ const Hero = () => {
       error: false,
       aspectRatio: videoAspectRatio,
     }));
-  }, [isMobile]);
+  }, []);
 
   const handleVideoError = useCallback(() => {
     setVideoState(prev => ({
@@ -92,6 +83,7 @@ const Hero = () => {
       isLoaded: false,
     }));
 
+    // ✅ GSAP fade-in for fallback
     gsap.to(containerRef.current, {
       height: '60vh',
       duration: 0.6,
@@ -138,6 +130,8 @@ const Hero = () => {
   useEffect(() => {
     const container = containerRef.current;
     const video = videoRef.current;
+    const mobileOverlay = mobileOverlayRef.current;
+    const desktopOverlay = overlayRef.current;
 
     if (!container || !video) return;
 
@@ -167,12 +161,26 @@ const Hero = () => {
       ease: 'power2.inOut',
     });
 
+    // ✅ Overlay fade animation
+    const overlayElement = isMobile ? mobileOverlay : desktopOverlay;
+    if (overlayElement) {
+      gsap.fromTo(
+        overlayElement,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+        }
+      );
+    }
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, [isMobile]);
 
-  // ✅ Handle window resize
+  // ✅ Handle window resize - recalculate animations
   useEffect(() => {
     const handleResize = () => {
       const video = videoRef.current;
@@ -214,16 +222,16 @@ const Hero = () => {
     <section
       ref={containerRef}
       className="relative w-full overflow-hidden bg-black
-                 p-0 sm:p-2 md:p-4 lg:p-6 "
+                 p-0 sm:p-2 md:p-4 lg:p-6"
       style={{
-        height: '60vh',
+        height: '80vh',
       }}
       aria-label="Hero section"
     >
       {/* Video Container */}
       <div 
-        className=" relative w-full h-full overflow-hidden 
-                   rounded-none sm:rounded-lg md:rounded-xl lg:rounded-2xl
+        className="relative  w-full h-full overflow-hidden
+                    rounded-2xl sm:rounded-xl md:rounded-xl lg:rounded-xl
                    sm:shadow-2xl sm:shadow-black/50"
       >
         {/* Video */}
@@ -235,11 +243,11 @@ const Hero = () => {
           playsInline
           preload="auto"
           poster={isMobile ? "/images/video-poster-mobile.jpg" : "/images/video-poster.jpg"}
-          className={`absolute inset-0 w-full h-full
+          className={`absolute inset-0  w-full h-full
                        ${isMobile ? 'object-contain' : 'object-cover'}`}
           style={{
             objectPosition: 'center center',
-            opacity: 0, // ✅ Start from 0 - GSAP animates to 1
+            opacity: 0.7,
             backgroundColor: '#000',
           }}
           onCanPlay={handleVideoCanPlay}
@@ -251,17 +259,16 @@ const Hero = () => {
 
         {/* Fallback Background */}
         {videoState.error && (
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-950" />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-950 " />
         )}
 
-        {/* Overlays - Only render if video is ready */}
+        {/* Mobile Shadows - Optimized */}
         {(videoState.isPlayable || videoState.error) && (
           <>
             {/* MOBILE - Light & Clean */}
             <div
               ref={mobileOverlayRef}
-              className="block sm:hidden absolute inset-0 pointer-events-none"
-              style={{ opacity: 0 }}
+              className="block sm:hidden absolute inset-0 pointer-events-none opacity-0"
             >
               {/* Subtle Vignette */}
               <div 
@@ -283,8 +290,7 @@ const Hero = () => {
             {/* DESKTOP - Darker Shadows */}
             <div
               ref={overlayRef}
-              className="hidden sm:block absolute inset-0 pointer-events-none"
-              style={{ opacity: 0 }}
+              className="hidden sm:block absolute inset-0 pointer-events-none opacity-0"
             >
               {/* Main Vignette */}
               <div 
