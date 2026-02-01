@@ -52,7 +52,7 @@ const personsData = [
       { url: "/Images/AI-Person-5/1.jpg", public_id: "img1" },
       { url: "/Images/AI-Person-5/2.jpg", public_id: "img2" },
       { url: "/Images/AI-Person-5/3.jpg", public_id: "img3" },
-      { url: "/Images/AI-Person-5/4.jpg", public_id: "img4" },
+      
     ],
     imageCount: 4,
   },
