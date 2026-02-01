@@ -22,7 +22,7 @@ const CONFIG = {
 const NAV_LINKS = [
   { name: 'Home', href: '/', icon: '🏠' },
   { name: 'Gallery', href: '/Gallery', icon: '📸' },
-  { name: 'Service', href: '/Service', icon: '🚀' },
+  { name: 'Service Categories', href: '/Service', icon: '🥵' },
   { name: 'Pricing', href: '/Pricing', icon: '💎' },
   { name: 'About', href: '/About', icon: '✨' },
   

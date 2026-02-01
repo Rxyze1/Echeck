@@ -38,12 +38,7 @@ const About = () => {
       titleHindi: "आसान बुकिंग",
       description: "Simple booking process - WhatsApp ya call karo aur 30 minutes mein aapke location pe service. Fast aur hassle-free."
     },
-    {
-      icon: "💯",
-      title: "100% Satisfaction Guarantee",
-      titleHindi: "संतुष्टि की गारंटी",
-      description: "Agar aap satisfied nahi hue, replacement ya refund guaranteed. Hamara promise hai - full satisfaction ya paisa waapas."
-    },
+    
     {
       icon: "🌟",
       title: "VIP Treatment",
@@ -97,14 +92,14 @@ const About = () => {
       step: "2",
       title: "Choose Your Girl",
       titleHindi: "अपनी पसंद की लड़की चुनें",
-      description: "Hamari gallery dekho aur apni pasand ki girl select karo. Real photos aur verified profiles.",
+      description: "Hamari gallery bas ek demo hai - app whatsapp par girl select kar sakte ho jo aapko pasand ho.",
       icon: "💕"
     },
     {
       step: "3",
       title: "Confirm Booking",
       titleHindi: "बुकिंग कन्फर्म करें",
-      description: "Package aur timing finalize karo. 50% advance payment karke booking confirm karo.",
+      description: "Package aur timing finalize karo.Phir aapka person receive hota hai.Payment karo — before touching her.",
       icon: "✅"
     },
     {
@@ -323,17 +318,7 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="mt-8 p-6 rounded-2xl bg-red-950/30 border border-red-900/50">
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl">🏆</span>
-                  <div>
-                    <h4 className="text-white font-semibold mb-2">Our Promise</h4>
-                    <p className="text-gray-400 text-sm">
-                      Agar aapko kisi bhi reason se satisfaction nahi mili, hum <span className="text-red-400 font-semibold">free replacement ya full refund</span> denge. Yeh hamara guarantee hai!
-                    </p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </motion.div>
 

@@ -19,9 +19,11 @@ const page = () => {
       <Hero />
       <Gallery />
       {/* <Service /> */}
-      <Areainjaipur />
+      
       <SEOFaq />
+      
       <Footer />
+      <Areainjaipur />
       
     </div>
   )

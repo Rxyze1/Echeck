@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import ServicetextCard from '../components/MiniCompo/ServicetextCard';
 
 const Page = () => {
 
@@ -40,7 +41,7 @@ const Page = () => {
         "Modern & open-minded",
         "Fluent English communication"
       ],
-      priceRange: "₹2,000 - ₹4,000",
+      priceRange: "₹4,500 - ₹7,000",
       availability: "Evening & Night preferred"
     },
     {
@@ -57,7 +58,7 @@ const Page = () => {
         "Homely & caring approach",
         "Perfect for relaxation & comfort"
       ],
-      priceRange: "₹2,500 - ₹5,000",
+      priceRange: "₹5000 - ₹10,000",
       availability: "Afternoon & Evening"
     },
     {
@@ -74,7 +75,7 @@ const Page = () => {
         "Perfect for corporate events",
         "International etiquette"
       ],
-      priceRange: "₹5,000 - ₹10,000",
+      priceRange: "₹8,000 - ₹12,000",
       availability: "Pre-booking recommended"
     },
     {
@@ -108,7 +109,7 @@ const Page = () => {
         "High-class events & meetings",
         "Exceptional beauty & intelligence"
       ],
-      priceRange: "₹8,000 - ₹20,000",
+      priceRange: "₹10,000 - ₹20,000",
       availability: "24/7 with advance notice"
     },
   ], []);
@@ -271,9 +272,9 @@ const Page = () => {
   ], []);
 
   const pricingPlans = useMemo(() => [
-    { duration: "Quick Booking", price: "₹1500", time: "1 Hour" },
-    { duration: "Standard", price: "₹2000–₹3000", time: "2 Hours" },
-    { duration: "Full Night", price: "₹5000–₹10000", time: "12 Hours" },
+    { duration: "Quick Booking", price: "₹6000", time: "1 Hour" },
+    { duration: "Standard", price: "₹11000+", time: "2 Hours" },
+    { duration: "Full Night", price: "₹15000+", time: "12 Hours" },
   ], []);
 
   const howToBook = useMemo(() => [
@@ -441,6 +442,11 @@ const Page = () => {
             />
           </motion.div>
 
+          <motion.div>
+            {/* VVIP MODELS GRID */}
+            < ServicetextCard />
+          </motion.div>
+
           {/* WHY WE'RE #1 */}
           <motion.div
             variants={containerVariants}
@@ -450,7 +456,7 @@ const Page = () => {
             className="mb-24"
           >
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">⭐ Why We're #1 in 2026</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">⭐ Why We&apos;re #1 in 2026</h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                 Real profiles. Clear communication. Discreet meetings. No nonsense.
               </p>
