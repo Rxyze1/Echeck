@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #000000;  /* ✅ Changed to black (dark is default) */
+  --foreground: #ededed;  /* ✅ Light text by default */
 }
 
 @theme inline {
@@ -12,10 +12,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #000000;
-    --foreground: #ededed;
+    --background: #ffffff;  /* Light mode only if user prefers it */
+    --foreground: #000000;
   }
 }
 
