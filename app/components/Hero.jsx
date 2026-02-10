@@ -19,7 +19,6 @@ const Hero = () => {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
   const overlayRef = useRef(null);
-  const mobileOverlayRef = useRef(null);
 
   // ✅ Mobile detection
   useEffect(() => {
@@ -39,19 +38,16 @@ const Hero = () => {
     if (!video) return;
 
     const videoAspectRatio = video.videoWidth / video.videoHeight;
-    const screenWidth = Math.min(window.innerWidth - 16, 1920);
+    const screenWidth = Math.min(window.innerWidth - 32, 1920);
     const calculatedHeight = screenWidth / videoAspectRatio;
 
     let newHeight;
     if (window.innerWidth < 768) {
-      // Mobile
-      newHeight = Math.min(calculatedHeight, window.innerHeight * 0.75);
+      newHeight = Math.min(calculatedHeight, window.innerHeight * 0.6);
     } else {
-      // Desktop
-      newHeight = window.innerHeight * 0.8;
+      newHeight = window.innerHeight * 0.7;
     }
 
-    // ✅ GSAP smooth height animation
     gsap.to(containerRef.current, {
       height: newHeight,
       duration: 0.6,
@@ -59,7 +55,6 @@ const Hero = () => {
       overwrite: 'auto',
     });
 
-    // ✅ Video fade-in animation
     gsap.to(videoRef.current, {
       opacity: 1,
       duration: 0.8,
@@ -83,9 +78,8 @@ const Hero = () => {
       isLoaded: false,
     }));
 
-    // ✅ GSAP fade-in for fallback
     gsap.to(containerRef.current, {
-      height: '60vh',
+      height: '50vh',
       duration: 0.6,
       ease: 'power2.inOut',
     });
@@ -130,8 +124,7 @@ const Hero = () => {
   useEffect(() => {
     const container = containerRef.current;
     const video = videoRef.current;
-    const mobileOverlay = mobileOverlayRef.current;
-    const desktopOverlay = overlayRef.current;
+    const overlay = overlayRef.current;
 
     if (!container || !video) return;
 
@@ -144,7 +137,7 @@ const Hero = () => {
         scrub: 0.5,
         markers: false,
       },
-      y: isMobile ? 0 : 80,
+      y: isMobile ? 0 : 60,
       ease: 'none',
     });
 
@@ -157,15 +150,14 @@ const Hero = () => {
         scrub: 1,
         markers: false,
       },
-      opacity: isMobile ? 1 : 0.9,
+      opacity: 1,
       ease: 'power2.inOut',
     });
 
     // ✅ Overlay fade animation
-    const overlayElement = isMobile ? mobileOverlay : desktopOverlay;
-    if (overlayElement) {
+    if (overlay) {
       gsap.fromTo(
-        overlayElement,
+        overlay,
         { opacity: 0 },
         {
           opacity: 1,
@@ -180,21 +172,21 @@ const Hero = () => {
     };
   }, [isMobile]);
 
-  // ✅ Handle window resize - recalculate animations
+  // ✅ Handle window resize
   useEffect(() => {
     const handleResize = () => {
       const video = videoRef.current;
       if (!video || !video.videoWidth) return;
 
       const videoAspectRatio = video.videoWidth / video.videoHeight;
-      const screenWidth = Math.min(window.innerWidth - 16, 1920);
+      const screenWidth = Math.min(window.innerWidth - 32, 1920);
       const calculatedHeight = screenWidth / videoAspectRatio;
 
       let newHeight;
       if (window.innerWidth < 768) {
-        newHeight = Math.min(calculatedHeight, window.innerHeight * 0.75);
+        newHeight = Math.min(calculatedHeight, window.innerHeight * 0.6);
       } else {
-        newHeight = window.innerHeight * 0.8;
+        newHeight = window.innerHeight * 0.7;
       }
 
       gsap.to(containerRef.current, {
@@ -220,19 +212,16 @@ const Hero = () => {
 
   return (
     <section
-      ref={containerRef}
-      className="relative w-full overflow-hidden bg-black
-                 p-0 sm:p-2 md:p-4 lg:p-6"
-      style={{
-        height: '80vh',
-      }}
+      className="relative w-full mt-26 px-4 sm:px-6 md:px-8 lg:px-12"
       aria-label="Hero section"
     >
-      {/* Video Container */}
-      <div 
-        className="relative  w-full h-full overflow-hidden
-                    rounded-2xl sm:rounded-xl md:rounded-xl lg:rounded-xl
-                   sm:shadow-2xl sm:shadow-black/50"
+      {/* Video Card Container */}
+      <div
+        ref={containerRef}
+        className="relative w-full overflow-hidden bg-black rounded-3xl shadow-2xl"
+        style={{
+          height: '70vh',
+        }}
       >
         {/* Video */}
         <video
@@ -243,11 +232,10 @@ const Hero = () => {
           playsInline
           preload="auto"
           poster={isMobile ? "/images/video-poster-mobile.jpg" : "/images/video-poster.jpg"}
-          className={`absolute inset-0  w-full h-full
-                       ${isMobile ? 'object-contain' : 'object-cover'}`}
+          className="absolute inset-0 w-full h-full object-cover"
           style={{
             objectPosition: 'center center',
-            opacity: 0.7,
+            opacity: 0,
             backgroundColor: '#000',
           }}
           onCanPlay={handleVideoCanPlay}
@@ -259,80 +247,25 @@ const Hero = () => {
 
         {/* Fallback Background */}
         {videoState.error && (
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-950 " />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-950" />
         )}
 
-        {/* Mobile Shadows - Optimized */}
+        {/* Simple Premium Overlay - Clean & Minimal */}
         {(videoState.isPlayable || videoState.error) && (
-          <>
-            {/* MOBILE - Light & Clean */}
-            <div
-              ref={mobileOverlayRef}
-              className="block sm:hidden absolute inset-0 pointer-events-none opacity-0"
-            >
-              {/* Subtle Vignette */}
-              <div 
-                className="absolute inset-0"
-                style={{
-                  background: 'radial-gradient(ellipse 100% 95% at 50% 50%, transparent 0%, transparent 70%, rgba(0, 0, 0, 0.1) 90%, rgba(0, 0, 0, 0.25) 100%)'
-                }}
-              />
-              
-              {/* Bottom Gradient */}
-              <div 
-                className="absolute bottom-0 left-0 right-0 h-1/4"
-                style={{
-                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 70%, transparent 100%)'
-                }}
-              />
-            </div>
+          <div
+            ref={overlayRef}
+            className="absolute inset-0 pointer-events-none opacity-0"
+            style={{
+              background: 'linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%)',
+            }}
+          />
+        )}
 
-            {/* DESKTOP - Darker Shadows */}
-            <div
-              ref={overlayRef}
-              className="hidden sm:block absolute inset-0 pointer-events-none opacity-0"
-            >
-              {/* Main Vignette */}
-              <div 
-                className="absolute inset-0"
-                style={{
-                  background: 'radial-gradient(ellipse 85% 75% at 50% 50%, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.65) 88%, rgba(0, 0, 0, 0.88) 100%)'
-                }}
-              />
-
-              {/* Bottom */}
-              <div 
-                className="absolute bottom-0 left-0 right-0 h-1/2"
-                style={{
-                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 35%, rgba(0, 0, 0, 0.2) 70%, transparent 100%)'
-                }}
-              />
-
-              {/* Top */}
-              <div 
-                className="absolute top-0 left-0 right-0 h-1/4"
-                style={{
-                  background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%)'
-                }}
-              />
-
-              {/* Left Side */}
-              <div 
-                className="absolute left-0 top-0 bottom-0 w-1/5"
-                style={{
-                  background: 'linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%)'
-                }}
-              />
-
-              {/* Right Side */}
-              <div 
-                className="absolute right-0 top-0 bottom-0 w-1/5"
-                style={{
-                  background: 'linear-gradient(to left, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%)'
-                }}
-              />
-            </div>
-          </>
+        {/* Pulsing Accent (Optional) */}
+        {videoState.isPlayable && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <span className="text-6xl md:text-8xl text-white/20 animate-pulse">✨</span>
+          </div>
         )}
       </div>
     </section>
