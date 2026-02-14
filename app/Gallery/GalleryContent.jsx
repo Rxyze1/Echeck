@@ -8,10 +8,12 @@ import personsData from '../../public/Images/images.js';
 
 
 
-const Gallery = () => {
+const GalleryContent = () => {
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [selectedMediaIndex, setSelectedMediaIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
+
+  const Webname = `Jaipur Call Girls`;
   
   const prefersReducedMotion = useReducedMotion();
 
@@ -191,6 +193,9 @@ const Gallery = () => {
 
 ];
 
+
+
+
   // Smoke particles for background animation
   const smokeParticles = useMemo(() => {
     return Array.from({ length: 6 }, (_, i) => ({
@@ -228,7 +233,7 @@ const Gallery = () => {
   };
 
   return (
-  <section id="gallery" className="relative min-h-screen py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 bg-black overflow-hidden">
+    <section id="gallery" className="relative min-h-screen py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 bg-black overflow-hidden">
       
   {/* Background particles - Enhanced */}
   {!prefersReducedMotion && (
@@ -260,7 +265,7 @@ const Gallery = () => {
   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-96 sm:w-[600px] md:w-[800px] h-96 sm:h-[600px] md:h-[800px] bg-red-600/15 rounded-full blur-3xl opacity-40 pointer-events-none animate-pulse" />
 
   <div className="relative z-10 w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10">
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto mt-20">
       
       {/* Enhanced Section Header */}
       <motion.div
@@ -649,7 +654,7 @@ const Gallery = () => {
                 >
                   {/* WhatsApp */}
                   <a
-                    href={`https://wa.me/918058457070?text=Hi! I'm interested in booking ${selectedProfile.name}`}
+                    href={`https://wa.me/918058457070?text=Hey ${Webname}:- I'm interested in booking`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1"
@@ -818,4 +823,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default GalleryContent;
