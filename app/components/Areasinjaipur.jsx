@@ -1,258 +1,162 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 
+const AreaCard = React.memo(({ area, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+      transition={{ duration: 0.3, delay: (index % 10) * 0.02 }}
+      whileHover={{ scale: 1.08, y: -4 }}
+      whileTap={{ scale: 0.95 }}
+      className="relative group h-12 sm:h-14"
+    >
+      {/* Glow Effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-500 rounded-lg blur opacity-0 group-hover:opacity-80 transition-opacity duration-300 -z-10" />
+
+      {/* Card */}
+      <button className="w-full h-full relative px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm whitespace-nowrap overflow-hidden transition-all duration-300">
+        
+        {/* Background with Glass Effect */}
+        <div className="absolute inset-0 rounded-lg bg-black/60 backdrop-blur-md border border-red-500/40 group-hover:border-red-400/80 group-hover:bg-red-600/20 transition-all duration-300" />
+
+        {/* Shimmer */}
+        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transform -translate-x-full group-hover:translate-x-full transition-all duration-700" />
+
+        {/* Text */}
+        <span className="relative z-10 bg-gradient-to-r from-white to-red-200 bg-clip-text text-transparent group-hover:to-white transition-all">
+          {area}
+        </span>
+      </button>
+    </motion.div>
+  );
+});
+
+AreaCard.displayName = 'AreaCard';
+
 const Areasinjaipur = () => {
+  const [visibleCount, setVisibleCount] = useState(30);
+
   const allAreas = useMemo(() => [
-    // Central Jaipur
-    'C-Scheme',
-    'Civil Lines',
-    'MI Road',
-    'Ashok Nagar',
-    'Bani Park',
-    'Station Road',
-    'Sindhi Camp',
-    'Sansar Chandra Road',
-    'Ajmer Road (Central)',
-    'Shyam Nagar',
-    // East Jaipur
-    'Raja Park',
-    'Adarsh Nagar',
-    'Jawahar Nagar',
-    'Tilak Nagar',
-    'Malviya Nagar',
-    'Jagatpura',
-    'Pratap Nagar',
-    'Durgapura',
-    'Goner Road',
-    'Ram Ganj',
-    'Sanganeri Gate',
-    'Transport Nagar',
-    // West Jaipur
-    'Vaishali Nagar',
-    'Nirman Nagar',
-    'Sodala',
-    'Shyam Nagar',
-    'Ajmer Road',
-    'Heerapura',
-    'Kamla Nehru Nagar',
-    'Panchyawala',
-    'Karni Vihar',
-    'Queens Road',
-    // South Jaipur
-    'Mansarovar',
-    'Mansarovar Extension',
-    'Gopalpura',
-    'Gopalpura Bypass',
-    'Triveni Nagar',
-    'Mahesh Nagar',
-    'Kartarpura',
-    'Muhana',
-    'ISI Colony',
-    'Shipra Path',
-    'Patrakar Colony',
-    // North Jaipur
-    'Jhotwara',
-    'Vidhyadhar Nagar',
-    'Murlipura',
-    'Ambabari',
-    'Shastri Nagar',
-    'Baniyawas',
-    'Nindar Mod',
-    'Harmada',
-    'VKI Area',
-    'Chandpol',
-    // Old City
-    'Johari Bazaar',
-    'Bapu Bazaar',
-    'Tripolia Bazaar',
-    'Chandpole Bazaar',
-    'Kishanpole Bazaar',
-    'Ramganj Bazaar',
-    'Subhash Chowk',
-    'Choti Chaupar',
-    'Badi Chaupar',
-    'Galta Gate',
-    // New Areas
-    'Jagatpura Extension',
-    'Mahindra SEZ',
-    'Ring Road Area',
-    'Kalwar Road',
-    'Sirsi Road',
-    'Benad Road',
-    'Jaisinghpura',
-    'Hathoj',
-    'Bad Ke Balaji',
-    'Bhankrota',
-    'Narayan Vihar',
+    'C-Scheme', 'Civil Lines', 'MI Road', 'Ashok Nagar', 'Bani Park',
+    'Station Road', 'Sindhi Camp', 'Sansar Chandra Road', 'Ajmer Road', 'Shyam Nagar',
+    'Raja Park', 'Adarsh Nagar', 'Jawahar Nagar', 'Tilak Nagar', 'Malviya Nagar',
+    'Jagatpura', 'Pratap Nagar', 'Durgapura', 'Goner Road', 'Ram Ganj',
+    'Sanganeri Gate', 'Transport Nagar', 'Vaishali Nagar', 'Nirman Nagar', 'Sodala',
+    'Heerapura', 'Kamla Nehru Nagar', 'Panchyawala', 'Karni Vihar', 'Queens Road',
+    'Mansarovar', 'Mansarovar Ext.', 'Gopalpura', 'Gopalpura Bypass', 'Triveni Nagar',
+    'Mahesh Nagar', 'Kartarpura', 'Muhana', 'ISI Colony', 'Shipra Path',
+    'Patrakar Colony', 'Jhotwara', 'Vidhyadhar Nagar', 'Murlipura', 'Ambabari',
+    'Shastri Nagar', 'Baniyawas', 'Nindar Mod', 'Harmada', 'VKI Area',
+    'Chandpol', 'Johari Bazaar', 'Bapu Bazaar', 'Tripolia Bazaar', 'Chandpole Bazaar',
+    'Kishanpole Bazaar', 'Ramganj Bazaar', 'Subhash Chowk', 'Choti Chaupar', 'Badi Chaupar',
+    'Galta Gate', 'Jagatpura Ext.', 'Mahindra SEZ', 'Ring Road', 'Kalwar Road',
+    'Sirsi Road', 'Benad Road', 'Jaisinghpura', 'Hathoj', 'Bad Ke Balaji',
+    'Bhankrota', 'Narayan Vihar', 'Pushkar Road', 'Sanganer', 'Tonk Road',
   ], []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.012,
-        delayChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.6, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' },
-    },
-  };
+  const displayedAreas = useMemo(() => allAreas.slice(0, visibleCount), [allAreas, visibleCount]);
 
   return (
-    <section className="relative min-h-screen py-28 bg-black overflow-hidden">
+    <section className="relative min-h-fit py-20 md:py-28 bg-black overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-950 to-black pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-radial from-red-900/15 via-transparent to-transparent pointer-events-none" />
-      
-      {/* Animated Background Orbs */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-900/30 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-900/25 rounded-full mix-blend-screen filter blur-3xl opacity-25 animate-pulse" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-900/10 rounded-full mix-blend-overlay filter blur-3xl opacity-10" />
+      <div className="absolute inset-0 bg-gradient-radial from-red-900/10 via-transparent to-transparent pointer-events-none" />
 
-      <div className="relative z-10 container mx-auto px-4 lg:px-8">
+      {/* Animated Background Orbs - Optimized */}
+      <div className="absolute -top-40 -right-40 w-72 h-72 bg-red-900/20 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute -bottom-40 -left-40 w-72 h-72 bg-red-900/20 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse" />
+
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 max-w-7xl">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 md:mb-20"
         >
-          <motion.h2
-            className="text-4xl md:text-5xl lg:text-6xl font-black mb-4"
-          >
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-4">
             <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
               Service Areas
             </span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-400 text-lg"
-          >
-            Available Across All Zones
-          </motion.p>
+          </h2>
+          <p className="text-gray-400 text-sm md:text-lg">
+            Available Across All Zones in Jaipur
+          </p>
         </motion.div>
 
-        {/* AREAS GRID - GLASS MORPHISM */}
+        {/* Areas Grid - Optimized with Smaller Cards */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.05 }}
-          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 mb-12"
         >
-          {allAreas.map((area, idx) => (
+          {displayedAreas.map((area, idx) => (
+            <AreaCard key={idx} area={area} index={idx} />
+          ))}
+        </motion.div>
+
+        {/* Load More Button */}
+        {visibleCount < allAreas.length && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="flex justify-center mb-12"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setVisibleCount(prev => Math.min(prev + 30, allAreas.length))}
+              className="px-8 py-3 rounded-full font-bold text-sm md:text-base bg-gradient-to-r from-red-600 to-red-500 border border-red-400/60 hover:border-red-300 text-white shadow-lg shadow-red-600/40 transition-all duration-300 hover:shadow-red-600/60"
+            >
+              Load More Areas ({visibleCount}/{allAreas.length})
+            </motion.button>
+          </motion.div>
+        )}
+
+        {/* Stats Section - Compact */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="grid grid-cols-3 gap-4 md:gap-6 mb-16"
+        >
+          {[
+            { number: '88+', label: 'Areas' },
+            { number: '24/7', label: 'Available' },
+            { number: '100%', label: 'Verified' },
+          ].map((stat, idx) => (
             <motion.div
               key={idx}
-              variants={itemVariants}
-              whileHover={{ scale: 1.18, y: -6 }}
-              whileTap={{ scale: 0.88 }}
-              className="relative group cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              className="relative group"
             >
-              {/* Outer Glow - Red */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10 group-hover:blur-lg" />
+              {/* Glow */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-500 rounded-lg blur opacity-0 group-hover:opacity-60 transition-opacity duration-300 -z-10" />
 
-              {/* Inner Shadow Glow */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-full blur opacity-0 group-hover:opacity-80 transition-all duration-400 -z-10" />
-              
-              {/* Button with Glass Effect */}
-              <button className="relative px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm md:text-base whitespace-nowrap overflow-hidden group/btn transition-all duration-300">
-                
-                {/* Base Background - Dark with transparency */}
-                <div className="absolute inset-0 rounded-full bg-black/40 backdrop-blur-lg border-2 border-red-500/60 group-hover/btn:border-red-400/100 transition-all duration-300" />
-                
-                {/* Hover Glass Effect - Red tinted */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-600/40 to-red-500/20 opacity-0 group-hover/btn:opacity-100 backdrop-blur-xl transition-all duration-300 mix-blend-overlay" />
-
-                {/* Shimmer Effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover/btn:opacity-60 transform -translate-x-full group-hover/btn:translate-x-full transition-all duration-700" />
-                
-                {/* Text with Gradient */}
-                <span className="relative flex items-center justify-center bg-gradient-to-r from-white to-red-200 bg-clip-text text-transparent group-hover/btn:from-white group-hover/btn:to-white group-hover/btn:text-white transition-all">
-                  {area}
-                </span>
-              </button>
+              <div className="relative p-4 md:p-6 rounded-lg bg-black/50 backdrop-blur-md border border-red-500/30 group-hover:border-red-400/60 transition-all text-center">
+                <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                  {stat.number}
+                </p>
+                <p className="text-xs md:text-sm text-gray-300 mt-1">{stat.label}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Stats Section - Glass Morphism */}
+        {/* CTA Buttons - Compact */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-24 flex justify-center"
-        >
-          <div className="relative group">
-            {/* Glow Background */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-500 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10" />
-            
-            <div className="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-10 px-8 sm:px-12 py-6 sm:py-8 rounded-2xl bg-black/50 backdrop-blur-2xl border-2 border-red-500/50 group-hover:border-red-400/80 transition-all duration-300">
-              {/* Stat 1 */}
-              <motion.div
-                className="text-center"
-                whileHover={{ scale: 1.1 }}
-              >
-                <p className="text-3xl md:text-4xl font-black bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent drop-shadow-lg">
-                  88+
-                </p>
-                <p className="text-sm md:text-base text-gray-300 font-semibold mt-1 tracking-wide">Areas Covered</p>
-              </motion.div>
-
-              {/* Divider */}
-              <div className="hidden sm:block w-px h-12 bg-gradient-to-b from-red-600/30 via-red-500/60 to-red-600/30" />
-              <div className="sm:hidden w-24 h-px bg-gradient-to-r from-red-600/30 via-red-500/60 to-red-600/30" />
-
-              {/* Stat 2 */}
-              <motion.div
-                className="text-center"
-                whileHover={{ scale: 1.1 }}
-              >
-                <p className="text-3xl md:text-4xl font-black bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent drop-shadow-lg">
-                  24/7
-                </p>
-                <p className="text-sm md:text-base text-gray-300 font-semibold mt-1 tracking-wide">Available</p>
-              </motion.div>
-
-              {/* Divider */}
-              <div className="hidden sm:block w-px h-12 bg-gradient-to-b from-red-600/30 via-red-500/60 to-red-600/30" />
-              <div className="sm:hidden w-24 h-px bg-gradient-to-r from-red-600/30 via-red-500/60 to-red-600/30" />
-
-              {/* Stat 3 */}
-              <motion.div
-                className="text-center"
-                whileHover={{ scale: 1.1 }}
-              >
-                <p className="text-3xl md:text-4xl font-black bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent drop-shadow-lg">
-                  100%
-                </p>
-                <p className="text-sm md:text-base text-gray-300 font-semibold mt-1 tracking-wide">Verified</p>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center mt-20"
+          transition={{ delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
             href="https://wa.me/918058457070"
@@ -262,13 +166,9 @@ const Areasinjaipur = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative px-10 py-4 rounded-full font-bold text-white text-base bg-gradient-to-r from-green-600 to-green-500 border-2 border-green-400/60 hover:border-green-300 shadow-xl shadow-green-600/50 overflow-hidden group"
+              className="w-full sm:w-auto px-8 py-3 rounded-full font-bold text-sm md:text-base bg-gradient-to-r from-green-600 to-green-500 border border-green-400/60 text-white shadow-lg shadow-green-600/40 hover:shadow-green-600/60 transition-all"
             >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative flex items-center gap-2">
-                <span>💬</span>
-                WhatsApp Now
-              </span>
+              💬 WhatsApp
             </motion.button>
           </a>
 
@@ -276,13 +176,9 @@ const Areasinjaipur = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative px-10 py-4 rounded-full font-bold text-white text-base backdrop-blur-xl bg-black/50 border-2 border-red-500/70 hover:border-red-400 hover:bg-red-600/20 transition-all shadow-xl shadow-red-600/40 overflow-hidden group"
+              className="w-full sm:w-auto px-8 py-3 rounded-full font-bold text-sm md:text-base bg-black/50 backdrop-blur-md border border-red-500/60 hover:border-red-400 text-white shadow-lg shadow-red-600/30 transition-all"
             >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-15 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative flex items-center gap-2">
-                <span>📞</span>
-                Call: 8058457070
-              </span>
+              📞 8058457070
             </motion.button>
           </a>
         </motion.div>
