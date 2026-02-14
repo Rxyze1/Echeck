@@ -514,7 +514,7 @@ export default function RootLayout({
         {/* Canonical & Alternates */}
         <link rel="canonical" href="https://www.escortjaipurall.com/" />
         <link rel="alternate" hrefLang="en-IN" href="https://www.escortjaipurall.com/" />
-        <link rel="alternate" hrefLang="hi" href="https://www.escortjaipurall.com/hi" />
+        <link rel="alternate" hrefLang="hi" href="https://www.escortjaipurall.com/#hi" />
       </head>
 
       <body className="antialiased bg-black min-h-screen">
