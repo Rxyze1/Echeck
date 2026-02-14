@@ -226,433 +226,593 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="relative min-h-screen py-12 sm:py-16 md:py-20 bg-black overflow-hidden">
+  <section id="gallery" className="relative min-h-screen py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 bg-black overflow-hidden">
       
-      {/* Background particles */}
-      {!prefersReducedMotion && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {smokeParticles.map((particle) => (
-            <div
-              key={`smoke-${particle.id}`}
-              className="absolute rounded-full bg-red-600/5 animate-float"
-              style={{
-                width: particle.size,
-                height: particle.size,
-                left: `${particle.left}%`,
-                top: `${particle.top}%`,
-                animationDuration: `${particle.duration}s`,
-                animationDelay: `${particle.delay}s`,
-                filter: 'blur(40px)',
-                willChange: 'transform',
-              }}
-            />
-          ))}
+  {/* Background particles - Enhanced */}
+  {!prefersReducedMotion && (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {smokeParticles.map((particle) => (
+        <div
+          key={`smoke-${particle.id}`}
+          className="absolute rounded-full bg-gradient-to-br from-red-600/10 to-red-400/5 animate-float"
+          style={{
+            width: particle.size,
+            height: particle.size,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
+            animationDuration: `${particle.duration}s`,
+            animationDelay: `${particle.delay}s`,
+            filter: 'blur(50px)',
+            willChange: 'transform',
+            boxShadow: '0 0 60px rgba(220, 38, 38, 0.1)',
+          }}
+        />
+      ))}
+    </div>
+  )}
+
+  {/* Enhanced Gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black via-black/50 via-75% to-black pointer-events-none" />
+  
+  {/* Radial glow effect */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-96 sm:w-[600px] md:w-[800px] h-96 sm:h-[600px] md:h-[800px] bg-red-600/15 rounded-full blur-3xl opacity-40 pointer-events-none animate-pulse" />
+
+  <div className="relative z-10 w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10">
+    <div className="max-w-7xl mx-auto">
+      
+      {/* Enhanced Section Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16 lg:mb-20"
+      >
+        {/* Badge with enhanced design */}
+        <div className="inline-flex items-center gap-2 px-3 xs:px-4 sm:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full bg-gradient-to-r from-red-950/50 to-red-900/30 border border-red-900/60 mb-4 sm:mb-6 md:mb-8 backdrop-blur-md hover:border-red-800 transition-all duration-300 shadow-lg shadow-red-900/20">
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-900 animate-pulse shadow-lg shadow-red-500/50" />
+          <span className="text-[10px] xs:text-xs sm:text-sm text-gray-300 tracking-widest font-bold">✨ EXCLUSIVE COLLECTION</span>
         </div>
-      )}
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
-
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-center mb-10 sm:mb-14 md:mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full bg-red-950/30 border border-red-900/50 mb-4 sm:mb-6">
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-            <span className="text-xs sm:text-sm text-gray-400 tracking-widest">EXCLUSIVE COLLECTION</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-4 bg-gradient-to-r from-white via-red-500 to-red-400 bg-clip-text text-transparent animate-gradient">
+        {/* Main Heading - Improved responsiveness */}
+        <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 md:mb-8 px-2 leading-tight">
+          <span className="bg-gradient-to-r from-white via-red-300 to-red-500 bg-clip-text text-transparent animate-gradient drop-shadow-lg">
             Our Gallery
-          </h2>
+          </span>
+        </h2>
 
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-6 sm:mb-8 px-4">
-            Discover your perfect companion from our exclusive selection
-          </p>
+        {/* Subtitle - Better typography */}
+        <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10 px-2 leading-relaxed font-light tracking-wide">
+          Discover your perfect companion from our exclusive and carefully curated selection
+        </p>
 
-          <div className="h-[2px] w-24 sm:w-32 mx-auto rounded-full bg-gradient-to-r from-transparent via-red-600 to-transparent" />
-        </motion.div>
+        {/* Decorative line - Enhanced */}
+        <div className="flex items-center justify-center gap-3 sm:gap-4">
+          <div className="h-[1px] w-6 xs:w-8 sm:w-12 md:w-16 bg-gradient-to-r from-transparent to-red-600" />
+          <div className="w-2 h-2 rounded-full bg-red-500 shadow-lg shadow-red-500/60 animate-pulse" />
+          <div className="h-[1px] w-6 xs:w-8 sm:w-12 md:w-16 bg-gradient-to-l from-transparent to-red-600" />
+        </div>
+      </motion.div>
 
-        {/* Gallery Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6"
-        >
-          {profiles.map((profile, index) => (
-            <motion.div
-              key={profile.id}
-              variants={cardVariants}
-              onMouseEnter={() => setHoveredCard(profile.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-              className="relative group cursor-pointer"
-              style={{ willChange: 'transform' }}
+      {/* Gallery Grid - Improved with better responsive behavior */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6 auto-rows-max"
+      >
+        {profiles.map((profile, index) => (
+          <motion.div
+            key={profile.id}
+            variants={cardVariants}
+            onMouseEnter={() => setHoveredCard(profile.id)}
+            onMouseLeave={() => setHoveredCard(null)}
+            className="group h-full"
+            style={{ willChange: 'transform' }}
+          >
+            <button
               onClick={() => {
                 setSelectedProfile(profile);
                 setSelectedMediaIndex(0);
               }}
+              className="w-full h-full relative rounded-2xl xs:rounded-2xl sm:rounded-3xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-red-800 focus:ring-offset-2 focus:ring-offset-black transition-all active:scale-95"
             >
-              <div className="card-container relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-b from-black/50 to-black border-2 border-white/10 transition-transform duration-300 hover:-translate-y-2 hover:scale-[1.01]">
+              {/* Card wrapper with gradient border effect */}
+              <div className="relative w-full h-full rounded-2xl xs:rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-b from-black/60 to-black/80 border-2 border-white/10 group-hover:border-red-500/30 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-red-500/20">
                 
-                {/* Card Image */}
-                <div className="relative aspect-[3/4] overflow-hidden">
+                {/* Shimmer overlay on hover */}
+                <div className="absolute -inset-1/2 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500 pointer-events-none" />
+
+                {/* Image container - Better aspect ratio handling */}
+                <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 h-full">
                   <Image
                     src={profile.images[0]?.url || '/placeholder.jpg'}
                     alt={profile.name}
                     fill
-                    sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 33vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 375px) 50vw, (max-width: 480px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                     priority={index < 4}
                     loading={index >= 4 ? 'lazy' : undefined}
                     quality={85}
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Crect fill='%23111'/%3E%3C/svg%3E"
                   />
                   
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-red-600/0 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+                  {/* Gradient overlays - Enhanced */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-red-600/0 group-hover:from-red-600/25 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  
+                  {/* Dark corner overlays for better text readability */}
+                  <div className="absolute top-0 left-0 right-0 h-20 sm:h-24 bg-gradient-to-b from-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                </div>
 
-                  {/* Badges */}
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 flex gap-2">
-                    <div className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-black/70 border border-white/20 text-white text-xs sm:text-sm font-medium flex items-center gap-1 backdrop-blur-sm">
+                {/* Badge section - Top */}
+                <div className="absolute top-3 xs:top-3 sm:top-4 left-3 xs:left-3 sm:left-4 right-3 xs:right-3 sm:right-4 z-20">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex gap-1.5 sm:gap-2 flex-wrap">
+                      {/* Age Badge */}
+                      <div className="px-2 xs:px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-black/70 backdrop-blur-md border border-white/40 text-white text-[10px] xs:text-xs sm:text-sm font-bold hover:border-red-500/70 transition-all shadow-lg hover:shadow-red-500/40">
+                        {profile.age}y
+                      </div>
+                    </div>
+
+                    {/* Image count Badge */}
+                    <div className="px-2 xs:px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-black/70 backdrop-blur-md border border-white/40 text-white text-[10px] xs:text-xs sm:text-sm font-bold hover:border-red-500/70 transition-all shadow-lg hover:shadow-red-500/40 flex items-center gap-1">
                       <span>📸</span>
                       <span>{profile.images.length}</span>
                     </div>
                   </div>
-
-                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-white/15 border border-white/20 text-white text-xs sm:text-sm font-medium backdrop-blur-sm">
-                    {profile.age}y
-                  </div>
                 </div>
 
-                {/* Card Content */}
-                <div className="relative p-4 sm:p-5 md:p-6">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors duration-300 truncate">
-                    {profile.name}
-                  </h3>
+                {/* Content section - Bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-3 xs:p-3.5 sm:p-4 md:p-5 z-20 space-y-2 sm:space-y-3">
+                  
+                  {/* Name */}
+                  <div className="min-h-[2.5rem] sm:min-h-[3rem]">
+                    <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl font-black text-white leading-tight truncate group-hover:text-red-300 transition-colors duration-300 line-clamp-2">
+                      {profile.name}
+                    </h3>
+                  </div>
 
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                  {/* Tags */}
+                  <div className="flex gap-1 sm:gap-1.5 flex-wrap">
                     {profile.tags.slice(0, 2).map((tag, i) => (
                       <span
                         key={i}
-                        className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-red-950/50 border border-red-900/50 text-red-300 text-[10px] sm:text-xs font-medium"
+                        className="px-1.5 xs:px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-red-900/70 border border-red-700/60 text-red-100 text-[9px] xs:text-[10px] sm:text-xs font-bold hover:bg-red-800/90 transition-all shadow-md hover:shadow-red-500/30"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <p className="text-gray-400 text-xs sm:text-sm line-clamp-2 mb-2 sm:mb-3">
+                  {/* Description - Hidden on mobile */}
+                  <p className="text-gray-200 text-[11px] xs:text-[12px] sm:text-xs line-clamp-2 leading-snug hidden xs:block font-light">
                     {profile.description}
                   </p>
 
-                  <div className={`text-red-400 font-medium text-xs sm:text-sm flex items-center gap-1 sm:gap-2 transition-opacity duration-300 ${
-                    hoveredCard === profile.id ? 'opacity-100' : 'opacity-0'
-                  }`}>
-                    View Profile
-                    <span className="inline-block animate-bounce-x">→</span>
+                  {/* CTA - Appears on hover */}
+                  <div className={`flex items-center gap-1 sm:gap-2 text-red-300 font-bold text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 translate-y-1`}>
+                    <span>View Profile</span>
+                    <span className="inline-block group-hover:translate-x-1 transition-transform duration-300 text-sm">→</span>
                   </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            </button>
+          </motion.div>
+        ))}
+      </motion.div>
 
-        {/* Load More Button */}
-        <div className="text-center mt-10 sm:mt-12 md:mt-16">
-          <button className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-white text-sm sm:text-base overflow-hidden bg-gradient-to-r from-red-600 to-pink-600 hover:scale-105 active:scale-95 transition-transform duration-200">
-            <span className="relative flex items-center gap-2">
-              View More Profiles
-              <span className="inline-block group-hover:translate-y-1 transition-transform duration-300">↓</span>
-            </span>
-          </button>
-        </div>
-      </div>
+      {/* Load More Button - Enhanced */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="flex justify-center mt-10 xs:mt-12 sm:mt-14 md:mt-16 lg:mt-20"
+      >
+        
+      </motion.div>
+    </div>
+  </div>
 
-      {/* Profile Detail Modal */}
-      <AnimatePresence mode="wait">
-        {selectedProfile && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setSelectedProfile(null)}
-              className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50"
-            />
+{/* Compact Profile Detail Modal */}
+<AnimatePresence mode="wait">
+  {selectedProfile && (
+    <>
+      {/* Backdrop */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        onClick={() => setSelectedProfile(null)}
+        className="fixed inset-0 bg-black/97 backdrop-blur-xl z-50"
+      />
 
-            {/* Modal Container */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 md:p-6"
-              onClick={(e) => {
-                if (e.target === e.currentTarget) {
-                  setSelectedProfile(null);
-                }
-              }}
-            >
-              <div className="relative w-full h-full sm:h-auto sm:max-h-[95vh] max-w-6xl rounded-none sm:rounded-2xl md:rounded-3xl bg-gradient-to-b from-zinc-900 to-black border-0 sm:border-2 border-red-900/30 overflow-hidden flex flex-col shadow-2xl">
+      {/* Compact Modal */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.85, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.85, y: 20 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) {
+            setSelectedProfile(null);
+          }
+        }}
+      >
+        <motion.div
+          className="relative w-full max-w-2xl rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col bg-gradient-to-b from-zinc-900 via-zinc-900 to-black border border-red-900/40 shadow-2xl shadow-black/80 max-h-[90vh]"
+        >
+          
+          {/* Close Button */}
+          <motion.button
+            whileHover={{ rotate: 90, scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setSelectedProfile(null)}
+            className="absolute top-2.5 right-2.5 z-40 p-1.5 sm:p-2 rounded-full bg-black/70 border border-red-600/50 text-white hover:bg-red-600 hover:border-red-500 transition-all duration-300 shadow-lg"
+          >
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </motion.button>
+
+          {/* Content */}
+          <div className="overflow-y-auto overscroll-contain scrollbar-thin scrollbar-thumb-red-600/70 scrollbar-track-zinc-900 flex-1">
+            
+            {/* Grid Layout - Compact */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 p-3 xs:p-4 sm:p-5">
+              
+              {/* Gallery - Left */}
+              <div className="space-y-2 sm:space-y-3 flex flex-col">
                 
-                {/* Close Button */}
-                <button
-                  onClick={() => setSelectedProfile(null)}
-                  className="absolute top-3 sm:top-4 right-3 sm:right-4 z-30 p-2 sm:p-2.5 rounded-full bg-black/90 border border-white/20 text-white hover:bg-red-600 hover:rotate-90 transition-all duration-300 active:scale-90 shadow-lg"
+                {/* Main Image */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-red-900/50 shadow-lg flex-shrink-0"
+                  style={{ aspectRatio: '3/4' }}
                 >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-
-                {/* Scrollable Content */}
-                <div className="h-full overflow-y-auto overscroll-contain scrollbar-thin scrollbar-thumb-red-600 scrollbar-track-zinc-900">
-                  <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6 md:p-8">
-                    
-                    {/* Left: Image Gallery */}
-                    <div className="space-y-3 sm:space-y-4 lg:sticky lg:top-0">
+                  <Image
+                    src={selectedProfile.images[selectedMediaIndex]?.url || selectedProfile.images[0]?.url}
+                    alt={`${selectedProfile.name}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 40vw"
+                    className="object-cover"
+                    priority
+                    quality={90}
+                  />
+                  
+                  {/* Navigation */}
+                  {selectedProfile.images.length > 1 && (
+                    <>
+                      <motion.button
+                        whileHover={{ scale: 1.15 }}
+                        whileTap={{ scale: 0.8 }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedMediaIndex((prev) => 
+                            prev > 0 ? prev - 1 : selectedProfile.images.length - 1
+                          );
+                        }}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 rounded-full bg-black/70 border border-white/40 text-white hover:bg-red-600 transition-all shadow-lg z-10"
+                      >
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </motion.button>
                       
-                      {/* Main Image Display */}
-                      <div className="relative w-full aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/10">
-                        <Image
-                          src={selectedProfile.images[selectedMediaIndex]?.url || selectedProfile.images[0]?.url}
-                          alt={`${selectedProfile.name} - Image ${selectedMediaIndex + 1}`}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                          className="object-contain"
-                          priority
-                          quality={95}
-                        />
-                        
-                        {/* Navigation Arrows */}
-                        {selectedProfile.images.length > 1 && (
-                          <>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setSelectedMediaIndex((prev) => 
-                                  prev > 0 ? prev - 1 : selectedProfile.images.length - 1
-                                );
-                              }}
-                              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/80 border border-white/30 text-white hover:bg-red-600 hover:scale-110 transition-all duration-200 active:scale-95 shadow-lg z-10"
-                            >
-                              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                              </svg>
-                            </button>
-                            
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setSelectedMediaIndex((prev) => 
-                                  (prev + 1) % selectedProfile.images.length
-                                );
-                              }}
-                              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/80 border border-white/30 text-white hover:bg-red-600 hover:scale-110 transition-all duration-200 active:scale-95 shadow-lg z-10"
-                            >
-                              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </button>
-                          </>
-                        )}
+                      <motion.button
+                        whileHover={{ scale: 1.15 }}
+                        whileTap={{ scale: 0.8 }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedMediaIndex((prev) => 
+                            (prev + 1) % selectedProfile.images.length
+                          );
+                        }}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 rounded-full bg-black/70 border border-white/40 text-white hover:bg-red-600 transition-all shadow-lg z-10"
+                      >
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </motion.button>
+                    </>
+                  )}
 
-                        {/* Image Counter */}
-                        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-black/80 border border-white/30 text-white text-xs sm:text-sm font-semibold shadow-lg backdrop-blur-sm">
-                          {selectedMediaIndex + 1} / {selectedProfile.images.length}
-                        </div>
-                      </div>
-
-                      {/* Thumbnails */}
-                      {selectedProfile.images.length > 1 && (
-                        <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-red-600 scrollbar-track-zinc-900">
-                          {selectedProfile.images.map((img, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => setSelectedMediaIndex(idx)}
-                              className={`relative flex-shrink-0 w-16 h-20 sm:w-20 sm:h-24 md:w-24 md:h-28 rounded-lg sm:rounded-xl overflow-hidden border-2 snap-start transition-all duration-200 hover:scale-105 ${
-                                selectedMediaIndex === idx
-                                  ? 'border-red-500 ring-2 ring-red-500/50 scale-105'
-                                  : 'border-white/20 opacity-60 hover:opacity-100'
-                              }`}
-                            >
-                              <Image
-                                src={img.url}
-                                alt={`Thumbnail ${idx + 1}`}
-                                fill
-                                sizes="120px"
-                                className="object-cover"
-                                loading="lazy"
-                              />
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Right: Profile Details */}
-                    <div className="space-y-4 sm:space-y-5 md:space-y-6 pb-4 lg:pb-0">
-                      
-                      {/* Name & Age */}
-                      <div>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 bg-gradient-to-r from-white to-red-400 bg-clip-text text-transparent">
-                          {selectedProfile.name}
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-gray-400">{selectedProfile.age} years old</p>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2">
-                        {selectedProfile.tags.map((tag, i) => (
-                          <span
-                            key={i}
-                            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-red-950/50 border border-red-900/50 text-red-300 text-xs sm:text-sm font-medium hover:bg-red-900/50 transition-colors"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Description */}
-                      <div>
-                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 flex items-center gap-2">
-                          <span className="text-red-500">✨</span>
-                          About
-                        </h3>
-                        <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                          {selectedProfile.description}
-                        </p>
-                      </div>
-
-                      {/* Skills */}
-                      <div>
-                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 flex items-center gap-2">
-                          <span className="text-red-500">💎</span>
-                          Skills & Interests
-                        </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                          {selectedProfile.skills.map((skill, i) => (
-                            <div
-                              key={i}
-                              className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-red-500/50 transition-all"
-                            >
-                              <span className="text-red-500 text-base sm:text-lg">✓</span>
-                              <span className="text-gray-300 text-xs sm:text-sm font-medium">{skill}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* CTA Buttons */}
-                      <div className="flex flex-col gap-3 sm:gap-4 pt-4 sm:pt-6 sticky bottom-0 bg-gradient-to-t from-black via-black to-transparent pb-4 sm:pb-0">
-                        
-                        {/* WhatsApp Button */}
-                        <a
-                          href={`https://wa.me/918058457070?text=Hi! I'm interested in booking ${selectedProfile.name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full"
-                        >
-                          <button className="w-full relative overflow-hidden px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-white text-sm sm:text-base bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-600 hover:scale-[1.02] active:scale-95 transition-all duration-200 shadow-lg hover:shadow-green-500/50">
-                            <span className="relative flex items-center justify-center gap-2">
-                              <span className="text-lg sm:text-xl">💬</span>
-                              Book via WhatsApp
-                            </span>
-                          </button>
-                        </a>
-
-                        {/* Call Button */}
-                        <a href="tel:+918058457070" className="w-full">
-                          <button className="w-full px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-white text-sm sm:text-base border-2 border-red-500 hover:bg-red-500/10 hover:scale-[1.02] active:scale-95 transition-all duration-200 shadow-lg hover:shadow-red-500/50">
-                            <span className="flex items-center justify-center gap-2">
-                              <span className="text-lg sm:text-xl">📞</span>
-                              Call Now: +91 805-845-7070
-                            </span>
-                          </button>
-                        </a>
-                      </div>
-                    </div>
+                  {/* Counter */}
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-2.5 xs:px-3 py-1 rounded-full bg-black/80 border border-red-600/60 text-white text-[10px] xs:text-xs font-bold">
+                    {selectedMediaIndex + 1} / {selectedProfile.images.length}
                   </div>
-                </div>
+                </motion.div>
+
+                {/* Thumbnails */}
+                {selectedProfile.images.length > 1 && (
+                  <div className="flex gap-1.5 overflow-x-auto pb-1 scroll-smooth scrollbar-thin scrollbar-thumb-red-600/70 scrollbar-track-zinc-900">
+                    {selectedProfile.images.map((img, idx) => (
+                      <motion.button
+                        key={idx}
+                        whileHover={{ scale: 1.08 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={() => setSelectedMediaIndex(idx)}
+                        className={`relative flex-shrink-0 rounded-lg overflow-hidden border snap-start transition-all ${
+                          selectedMediaIndex === idx
+                            ? 'border-red-500 ring-1 ring-red-500/60 scale-105'
+                            : 'border-white/25 opacity-50 hover:opacity-80'
+                        }`}
+                        style={{ width: '50px', height: '65px' }}
+                      >
+                        <Image
+                          src={img.url}
+                          alt={`Thumb ${idx + 1}`}
+                          fill
+                          sizes="60px"
+                          className="object-cover"
+                          loading="lazy"
+                        />
+                      </motion.button>
+                    ))}
+                  </div>
+                )}
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
 
-      {/* CSS Animations */}
-      <style jsx global>{`
-        @keyframes float {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(-10px, -15px) scale(1.1); }
-          50% { transform: translate(10px, -25px) scale(1.2); }
-          75% { transform: translate(-5px, -15px) scale(1.1); }
-        }
-        
-        @keyframes gradient {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        
-        @keyframes bounce-x {
-          0%, 100% { transform: translateX(0); }
-          50% { transform: translateX(5px); }
-        }
-        
-        .animate-float {
-          animation: float linear infinite;
-        }
-        
-        .animate-gradient {
-          background-size: 200% auto;
-          animation: gradient 5s ease infinite;
-        }
-        
-        .animate-bounce-x {
-          animation: bounce-x 1.5s ease-in-out infinite;
-        }
-        
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
+              {/* Details - Right */}
+              <div className="space-y-2.5 sm:space-y-3 flex flex-col min-h-full">
+                
+                {/* Header */}
+                <motion.div
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 }}
+                >
+                  <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-white leading-tight line-clamp-2">
+                    {selectedProfile.name}
+                  </h2>
+                  <p className="text-xs xs:text-sm text-gray-400 font-light">
+                    {selectedProfile.age} years old
+                  </p>
+                </motion.div>
 
-        /* Custom Scrollbar */
-        .scrollbar-thin::-webkit-scrollbar {
-          width: 6px;
-          height: 6px;
-        }
-        .scrollbar-thin::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        .scrollbar-thin::-webkit-scrollbar-thumb {
-          background: rgb(220 38 38 / 0.5);
-          border-radius: 3px;
-        }
-        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-          background: rgb(220 38 38 / 0.8);
-        }
-        
-        /* GPU Acceleration */
-        .card-container {
-          transform: translateZ(0);
-          backface-visibility: hidden;
-          -webkit-font-smoothing: subpixel-antialiased;
-        }
-      `}</style>
-    </section>
+                {/* Tags - Compact */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="flex flex-wrap gap-1"
+                >
+                  {selectedProfile.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/50 text-red-200 text-[10px] xs:text-xs font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </motion.div>
+
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-red-600/20 to-transparent" />
+
+                {/* About */}
+                <motion.div
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                >
+                  <h3 className="text-xs xs:text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1.5">
+                    <span className="text-sm xs:text-base">✨</span>
+                    About
+                  </h3>
+                  <p className="text-[11px] xs:text-xs sm:text-sm text-gray-300 leading-relaxed line-clamp-3">
+                    {selectedProfile.description}
+                  </p>
+                </motion.div>
+
+                {/* Skills - Compact Grid */}
+                <motion.div
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h3 className="text-xs xs:text-sm sm:text-base font-bold text-white mb-1.5 flex items-center gap-1.5">
+                    <span className="text-sm xs:text-base">💎</span>
+                    Skills
+                  </h3>
+                  <div className="grid grid-cols-2 gap-1">
+                    {selectedProfile.skills.slice(0, 4).map((skill, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-white/5 border border-white/10 hover:border-red-500/40 transition-all"
+                      >
+                        <span className="text-red-400 text-xs flex-shrink-0">✓</span>
+                        <span className="text-gray-300 text-[10px] xs:text-xs font-medium line-clamp-1">{skill}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Spacer */}
+                <div className="flex-1" />
+
+                {/* Action Buttons - Compact */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25 }}
+                  className="flex gap-2 pt-2"
+                >
+                  {/* WhatsApp */}
+                  <a
+                    href={`https://wa.me/918058457070?text=Hi! I'm interested in booking ${selectedProfile.name}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <motion.button 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full px-2.5 xs:px-3 py-2 xs:py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-bold text-white text-xs xs:text-sm bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-600 hover:shadow-lg hover:shadow-green-500/50 active:scale-95 transition-all shadow-md"
+                    >
+                      <span className="flex items-center justify-center gap-1">
+                        <span className="text-sm xs:text-base">💬</span>
+                        <span className="hidden xs:inline">WhatsApp</span>
+                        <span className="inline xs:hidden">Chat</span>
+                      </span>
+                    </motion.button>
+                  </a>
+
+                  {/* Call */}
+                  <a href="tel:+918058457070" className="flex-1">
+                    <motion.button 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full px-2.5 xs:px-3 py-2 xs:py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-bold text-white text-xs xs:text-sm bg-red-950/30 border border-red-500 hover:bg-red-500/20 hover:shadow-lg hover:shadow-red-500/50 active:scale-95 transition-all shadow-md"
+                    >
+                      <span className="flex items-center justify-center gap-1">
+                        <span className="text-sm xs:text-base">📞</span>
+                        <span className="hidden xs:inline">Call</span>
+                        <span className="inline xs:hidden">Call</span>
+                      </span>
+                    </motion.button>
+                  </a>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
+
+  {/* CSS Animations - Enhanced */}
+  <style jsx global>{`
+    @keyframes float {
+      0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+      }
+      25% { 
+        transform: translate(-15px, -25px) scale(1.15);
+        opacity: 0.4;
+      }
+      50% { 
+        transform: translate(18px, -35px) scale(1.3);
+        opacity: 0.35;
+      }
+      75% { 
+        transform: translate(-10px, -20px) scale(1.1);
+        opacity: 0.38;
+      }
+    }
+    
+    @keyframes gradient {
+      0%, 100% { 
+        background-position: 0% 50%;
+      }
+      50% { 
+        background-position: 100% 50%;
+      }
+    }
+    
+    @keyframes bounce-x {
+      0%, 100% { 
+        transform: translateX(0);
+      }
+      50% { 
+        transform: translateX(6px);
+      }
+    }
+
+    @keyframes shimmer {
+      0% { 
+        transform: translateX(-100%);
+      }
+      100% { 
+        transform: translateX(100%);
+      }
+    }
+    
+    .animate-float {
+      animation: float 20s linear infinite;
+    }
+    
+    .animate-gradient {
+      background-size: 200% auto;
+      animation: gradient 6s ease infinite;
+    }
+    
+    .animate-bounce-x {
+      animation: bounce-x 1.5s ease-in-out infinite;
+    }
+
+    .animate-shimmer {
+      animation: shimmer 2.5s infinite;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Custom Scrollbar - Enhanced */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: rgb(24 24 27 / 0.6);
+      border-radius: 3px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, rgb(220 38 38 / 0.7), rgb(220 38 38 / 0.4));
+      border-radius: 3px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(to bottom, rgb(220 38 38 / 0.9), rgb(220 38 38 / 0.6));
+    }
+
+    /* Firefox Scrollbar */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgb(220 38 38 / 0.6) rgb(24 24 27 / 0.6);
+    }
+    
+    /* GPU Acceleration */
+    .card-container {
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Mobile Performance */
+    @media (max-width: 640px) {
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      * {
+        -webkit-touch-callout: none;
+      }
+    }
+
+    /* Prevent layout shift */
+    html {
+      scroll-behavior: smooth;
+    }
+  `}</style>
+</section>
   );
 };
 

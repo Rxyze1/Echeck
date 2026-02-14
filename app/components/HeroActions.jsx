@@ -21,71 +21,71 @@ const HeroActions = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: [0.23, 1, 0.320, 1],
       },
     },
   };
 
   return (
-    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-b from-black via-black to-black overflow-hidden">
+    <section className="relative py-4 sm:py-5 md:py-6 lg:py-7 bg-gradient-to-b from-black via-black to-black overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-red-600/20 to-pink-600/10 rounded-full blur-3xl"
+          className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 bg-gradient-to-bl from-red-600/15 to-pink-600/8 rounded-full blur-3xl"
           animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
+            x: [0, 30, 0],
+            y: [0, 20, 0],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-pink-600/20 to-red-600/10 rounded-full blur-3xl"
+          className="absolute -bottom-16 -left-16 w-56 h-56 sm:w-64 sm:h-64 bg-gradient-to-tr from-pink-600/12 to-red-600/8 rounded-full blur-3xl"
           animate={{
-            x: [0, -50, 0],
-            y: [0, -30, 0],
+            x: [0, -30, 0],
+            y: [0, -20, 0],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
       {/* Main Content */}
-      <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 z-10">
+      <div className="relative w-full px-3 xs:px-4 sm:px-6 md:px-8 z-10">
         <motion.div
-          className="max-w-5xl mx-auto flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12"
+          className="max-w-4xl mx-auto flex flex-col items-center gap-2 xs:gap-2.5 sm:gap-3 md:gap-3.5"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           
-          {/* Premium Badge - Enhanced */}
+          {/* Premium Badge */}
           <motion.div
             variants={itemVariants}
             className="relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-pink-600 rounded-full blur opacity-30 group-hover:opacity-50 transition duration-500 animate-pulse" />
-            <div className="relative inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-7 md:px-9 py-2.5 sm:py-3 md:py-4 rounded-full bg-gradient-to-r from-red-950/80 to-pink-950/80 border border-red-500/40 backdrop-blur-2xl shadow-2xl hover:border-red-500/60 transition-all duration-300">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600/15 to-pink-600/10 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-500" />
+            <div className="relative inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 sm:px-5 py-1.5 xs:py-2 rounded-full bg-gradient-to-r from-red-950/70 to-pink-950/60 border border-red-900/30 backdrop-blur-lg shadow-md hover:border-red-900/50 transition-all duration-300">
               <motion.span
-                className="text-lg sm:text-xl md:text-2xl"
+                className="text-xs xs:text-sm sm:text-base"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 ✨
               </motion.span>
-              <span className="text-xs sm:text-sm md:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-pink-300 tracking-widest whitespace-nowrap">
-                PREMIUM EXPERIENCE AWAITS
+              <span className="text-[9px] xs:text-[10px] sm:text-xs font-bold text-red-300/80 tracking-wide whitespace-nowrap">
+                PREMIUM EXPERIENCE
               </span>
             </div>
           </motion.div>
@@ -93,129 +93,128 @@ const HeroActions = () => {
           {/* Main Heading */}
           <motion.div
             variants={itemVariants}
-            className="text-center max-w-3xl"
+            className="text-center max-w-2xl"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4 md:mb-5 leading-tight">
+            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1 xs:mb-1.5 leading-tight">
               Ready to Experience
-              <span className="block mt-2 sm:mt-3 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-400 to-red-400 animate-pulse">
+              <span className="block mt-0.5 xs:mt-1 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-400 to-red-400 animate-pulse">
                 Luxury & Comfort?
               </span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
-              Connect with us now for an unforgettable premium service experience
+            <p className="text-[10px] xs:text-xs sm:text-sm text-gray-400 leading-relaxed font-light px-2">
+              Connect with us for an unforgettable experience
             </p>
           </motion.div>
 
-          {/* Buttons Container - Enhanced */}
+          {/* Buttons Container */}
           <motion.div
             variants={itemVariants}
-            className="w-full flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 md:gap-6 mt-2 sm:mt-4"
+            className="w-full flex flex-col xs:flex-row items-stretch xs:items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 mt-1 xs:mt-1.5"
           >
             
-            {/* WhatsApp Button - Premium */}
+            {/* WhatsApp Button */}
             <motion.a
               href={`https://wa.me/${whatsappNumber}?text=Hello!%20I%20want%20to%20book%20premium%20service.`}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.08, y: -4 }}
+              whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative w-full sm:w-auto touch-manipulation"
+              className="group relative w-full xs:w-auto touch-manipulation"
             >
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500" />
-              <div className="relative px-6 sm:px-7 md:px-9 py-3.5 sm:py-4 md:py-5 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 flex items-center justify-center gap-3 sm:gap-3 md:gap-4 shadow-2xl shadow-green-600/50 group-hover:shadow-green-600/80 transition-all">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-green-600/25 to-emerald-500/15 rounded-lg blur opacity-30 group-hover:opacity-50 transition duration-400" />
+              <div className="relative px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-green-600/85 to-emerald-500/75 backdrop-blur-md flex items-center justify-center xs:justify-start gap-1.5 xs:gap-2 sm:gap-2.5 shadow-lg hover:shadow-green-600/30 border border-green-500/20 transition-all">
                 <motion.span
-                  className="text-2xl sm:text-2xl md:text-3xl flex-shrink-0"
-                  animate={{ y: [0, -2, 0] }}
+                  className="text-base xs:text-lg sm:text-xl flex-shrink-0"
+                  animate={{ y: [0, -1, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   💬
                 </motion.span>
                 <div className="flex flex-col items-start">
-                  <span className="text-white font-bold text-sm sm:text-base md:text-lg whitespace-nowrap">
-                    Chat on WhatsApp
+                  <span className="text-white font-bold text-[10px] xs:text-xs sm:text-sm whitespace-nowrap">
+                    WhatsApp
                   </span>
-                  <span className="text-xs text-green-100 font-medium">Usually replies instantly</span>
+                  <span className="text-[8px] xs:text-[9px] text-green-100 font-medium">Instant</span>
                 </div>
               </div>
             </motion.a>
 
-            {/* Call Button - Premium */}
+            {/* Call Button */}
             <motion.a
               href={`tel:${phoneNumber}`}
-              whileHover={{ scale: 1.08, y: -4 }}
+              whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative w-full sm:w-auto touch-manipulation"
+              className="group relative w-full xs:w-auto touch-manipulation"
             >
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-pink-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500" />
-              <div className="relative px-6 sm:px-7 md:px-9 py-3.5 sm:py-4 md:py-5 rounded-full border-2 border-red-500/60 bg-gradient-to-r from-red-950/60 to-pink-950/60 backdrop-blur-xl flex items-center justify-center gap-3 sm:gap-3 md:gap-4 hover:border-red-400/80 transition-all shadow-2xl shadow-red-600/40 group-hover:shadow-red-600/70">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600/25 to-pink-500/15 rounded-lg blur opacity-30 group-hover:opacity-50 transition duration-400" />
+              <div className="relative px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 sm:py-3 rounded-lg border border-red-900/40 bg-gradient-to-r from-red-950/75 to-pink-950/65 backdrop-blur-md flex items-center justify-center xs:justify-start gap-1.5 xs:gap-2 sm:gap-2.5 hover:border-red-800/60 transition-all shadow-lg hover:shadow-red-600/20">
                 <motion.span
-                  className="text-2xl sm:text-2xl md:text-3xl flex-shrink-0"
+                  className="text-base xs:text-lg sm:text-xl flex-shrink-0"
                   animate={{ rotate: [0, -10, 10, -10, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
                   📞
                 </motion.span>
                 <div className="flex flex-col items-start">
-                  <span className="text-white font-bold text-sm sm:text-base md:text-lg whitespace-nowrap">
+                  <span className="text-white font-bold text-[10px] xs:text-xs sm:text-sm whitespace-nowrap">
                     Call Now
                   </span>
-                  <span className="text-xs text-red-200 font-medium">24/7 Available</span>
+                  <span className="text-[8px] xs:text-[9px] text-red-200 font-medium">24/7</span>
                 </div>
               </div>
             </motion.a>
           </motion.div>
 
-          {/* Trust Signals */}
+          {/* Trust Signals - Compact */}
           <motion.div
             variants={itemVariants}
-            className="w-full grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 md:mt-8"
+            className="w-full grid grid-cols-3 gap-1.5 xs:gap-2 sm:gap-2.5 mt-1.5 xs:mt-2"
           >
             {[
-              { icon: '✓', text: 'Verified', subtext: 'Profiles' },
-              { icon: '🔒', text: 'Private', subtext: 'Discreet' },
-              { icon: '⚡', text: 'Instant', subtext: 'Response' },
+              { icon: '✓', text: 'Verified' },
+              { icon: '🔒', text: 'Private' },
+              { icon: '⚡', text: 'Instant' },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center gap-2 px-3 sm:px-4 py-3 sm:py-4 rounded-xl bg-gradient-to-br from-red-950/40 to-pink-950/40 border border-red-900/30 backdrop-blur-sm hover:border-red-700/60 transition-all"
+                whileHover={{ scale: 1.02 }}
+                className="flex flex-col items-center gap-0.5 px-2 xs:px-2.5 py-1.5 xs:py-2 rounded-lg bg-gradient-to-br from-red-950/35 to-pink-950/25 border border-red-900/20 backdrop-blur-sm hover:border-red-900/35 transition-all"
               >
-                <span className="text-xl sm:text-2xl md:text-3xl">{item.icon}</span>
-                <span className="text-xs sm:text-sm md:text-base font-bold text-white text-center">{item.text}</span>
-                <span className="text-xs text-gray-400">{item.subtext}</span>
+                <span className="text-sm xs:text-base sm:text-lg">{item.icon}</span>
+                <span className="text-[8px] xs:text-[9px] sm:text-xs font-bold text-white text-center leading-tight">{item.text}</span>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* Explore More Button - Enhanced */}
+          {/* Explore More Button */}
           <motion.button
             variants={itemVariants}
             onClick={scrollToNext}
-            whileHover={{ scale: 1.08 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-6 sm:mt-8 md:mt-10 group relative touch-manipulation"
+            className="mt-1.5 xs:mt-2 sm:mt-2.5 group relative touch-manipulation"
             aria-label="Scroll to explore more"
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600/50 to-pink-600/50 rounded-full blur opacity-50 group-hover:opacity-75 transition duration-500" />
-            <div className="relative flex flex-col items-center gap-3 sm:gap-4">
-              <div className="px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full bg-gradient-to-r from-red-950/70 to-pink-950/70 border border-red-900/50 backdrop-blur-xl shadow-lg group-hover:shadow-xl group-hover:border-red-700/80 transition-all">
-                <span className="text-xs sm:text-sm md:text-base tracking-widest font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-pink-300 uppercase">
-                  ↓ Explore More
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600/15 to-pink-600/10 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-400" />
+            <div className="relative flex flex-col items-center gap-0.5 xs:gap-1">
+              <div className="px-4 xs:px-5 sm:px-6 py-1.5 xs:py-2 rounded-full bg-gradient-to-r from-red-950/65 to-pink-950/55 border border-red-900/30 backdrop-blur-lg shadow-md group-hover:shadow-lg group-hover:border-red-900/50 transition-all">
+                <span className="text-[8px] xs:text-[9px] sm:text-xs tracking-wider font-bold text-red-300/70 uppercase">
+                  ↓ See Profiles
                 </span>
               </div>
               
               <motion.svg
-                className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-400 drop-shadow-lg"
+                className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-red-400/60"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                animate={{ y: [0, 8, 0] }}
+                animate={{ y: [0, 4, 0] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2.5}
+                  strokeWidth={2}
                   d="M19 14l-7 7m0 0l-7-7m7 7V3"
                 />
               </motion.svg>
@@ -227,8 +226,8 @@ const HeroActions = () => {
 
       {/* Bottom Accent Line */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent"
-        animate={{ opacity: [0.3, 0.8, 0.3] }}
+        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-600/15 to-transparent"
+        animate={{ opacity: [0.15, 0.4, 0.15] }}
         transition={{ duration: 3, repeat: Infinity }}
       />
     </section>
