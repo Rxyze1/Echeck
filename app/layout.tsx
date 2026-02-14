@@ -1,10 +1,11 @@
 // app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-/* ---------- Fonts ---------- */
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,103 +20,97 @@ const geistMono = Geist_Mono({
   weight: ["400", "500", "600"],
 });
 
-/* ---------- Aggressive SEO Metadata ---------- */
+/* ========== COMPREHENSIVE AGGRESSIVE SEO METADATA ========== */
 export const metadata: Metadata = {
+  // Title with keyword
   title: {
-    template: "%s | Jaipur Call Girls - Verified Independent Escorts 2026 | VIP Service",
-    default: "Jaipur Call Girls 2026 | Verified High-Profile Independent Escorts | VIP Companion Service Available 24/7",
+    template: "%s | Jaipur Call Girls - Verified Independent Escorts 2026 | 24/7 VIP Service",
+    default: "Jaipur Call Girls 2026 | Verified High-Profile Independent Escorts | Premium VIP Companion Service Available 24/7 | Discreet & Confidential",
   },
 
+  // Long-tail description with keywords
   description:
-    "Trusted Jaipur call girls service 2026. Verified high-profile independent escorts in Malviya Nagar, C-Scheme, Tonk Road & all areas. Discreet, safe, confidential. Cash-after-meeting. Female escorts, college girls, housewife escorts. 24/7 availability. Book now!",
+    "🔥 Verified Jaipur call girls service 2026 - Trusted independent escorts in Malviya Nagar, C-Scheme, Tonk Road & all areas. High-profile female escorts, college girls, housewife escorts. Safe, discreet, confidential booking. Cash-after-meeting. No advance payment. Instant booking. 24/7 availability. VIP companion service for special occasions. Professional & verified call girls. Book now!",
 
+  // Aggressive keyword targeting
   keywords: [
-    // Primary Keywords
+    // Tier 1: High-Priority Keywords
     "jaipur call girls",
     "call girls in jaipur",
     "jaipur escorts",
     "escorts in jaipur",
-    "jaipur escort service",
-    
-    // High-Volume Keywords
     "independent escorts jaipur",
-    "female escorts jaipur",
-    "vip escorts jaipur",
-    "premium escorts jaipur",
-    "high profile escorts jaipur",
+    "verified call girls jaipur",
+    "call girls service jaipur",
     
-    // Area-Specific Keywords
+    // Tier 2: Area-Specific (Local SEO)
     "call girls malviya nagar",
-    "escorts malviya nagar jaipur",
-    "call girls c scheme jaipur",
     "escorts c scheme jaipur",
-    "call girls tonk road jaipur",
-    "escorts near me jaipur",
-    "call girls near jaipur railway station",
+    "call girls tonk road",
     "escorts civil lines jaipur",
-    "call girls bani park jaipur",
-    "escorts adarsh nagar jaipur",
+    "call girls bani park",
+    "escorts adarsh nagar",
+    "call girls near me jaipur",
     
-    // Long-Tail Keywords
+    // Tier 3: Long-Tail Keywords
     "verified call girls in jaipur 2026",
     "genuine independent escorts jaipur",
     "real call girls in jaipur",
-    "authentic escorts service jaipur",
-    "certified female escorts jaipur",
-    
-    // Service-Specific Keywords
-    "college girl escorts jaipur",
-    "housewife escorts jaipur",
-    "young call girls jaipur",
-    "model escorts jaipur",
-    "air hostess escorts jaipur",
-    "actress escorts jaipur",
-    
-    // Payment & Booking Keywords
-    "cash after meeting escorts jaipur",
-    "no advance call girls jaipur",
-    "pay after service escorts",
-    "24/7 escort booking jaipur",
-    "urgent call girls jaipur",
-    
-    // Safety & Verification Keywords
-    "verified call girls",
-    "safe escorts jaipur",
-    "confidential escort service",
-    "discreet call girls",
-    "secure booking escorts",
-    "trusted escort agency jaipur",
-    
-    // Comparison Keywords
     "best call girls in jaipur",
     "top rated escorts jaipur",
     "luxury escorts jaipur",
+    "premium call girls jaipur",
+    "high profile escorts jaipur",
+    
+    // Tier 4: Type-Specific
+    "college girl escorts jaipur",
+    "housewife escorts jaipur",
+    "model escorts jaipur",
+    "air hostess escorts jaipur",
+    "actress escorts jaipur",
+    "young call girls jaipur",
+    
+    // Tier 5: Booking/Payment Keywords
+    "cash after meeting escorts jaipur",
+    "no advance call girls",
+    "instant booking escorts",
+    "24/7 escort booking jaipur",
+    "urgent call girls available",
+    "same day booking escorts",
+    
+    // Tier 6: Safety & Trust Keywords
+    "safe escorts jaipur",
+    "confidential escort service",
+    "discreet call girls",
+    "verified profiles",
+    "trusted escort agency",
+    "secure booking",
+    
+    // Tier 7: Service Keywords
+    "vip companion service",
     "premium companion service",
+    "escort for events",
+    "date escort jaipur",
+    "travel escort jaipur",
     
-    // Intent-Based Keywords
-    "book call girl jaipur",
-    "hire escorts jaipur",
-    "find call girls near me",
-    "independent escort jaipur booking",
-    "call girl mobile number jaipur",
+    // Tier 8: Question Keywords (Featured Snippets)
+    "how to book call girl jaipur",
+    "where to find escorts in jaipur",
+    "best time to book escorts",
+    "how much do escorts cost in jaipur",
+    "are escorts safe in jaipur",
     
-    // Branded Keywords
-    "jaipur call girls 2026",
-    "jaipur escort directory",
-    "jaipur girls listing",
-    "escort profiles jaipur",
+    // Tier 9: Competitor & Comparison Keywords
+    "call girls jaipur vs other cities",
+    "best escort service in jaipur",
+    "affordable escorts jaipur",
     
-    // Additional High-Ranking Keywords
-    "adult escorts jaipur",
-    "dating escort jaipur",
-    "companion girls jaipur",
-    "call girl service rajasthan",
-    "24 hours escorts jaipur",
-    "available now escorts",
-    "instant booking call girls",
+    // Tier 10: Additional Long-Tail
     "video call girls jaipur",
-    "personal escort service",
+    "personal escort service jaipur",
     "private escort jaipur",
+    "adult escorts jaipur",
+    "dating escort service",
   ],
 
   metadataBase: new URL("https://www.escortjaipurall.com"),
@@ -124,11 +119,10 @@ export const metadata: Metadata = {
     canonical: "https://www.escortjaipurall.com/",
     languages: {
       "en-IN": "https://www.escortjaipurall.com/",
-      hi: "https://www.escortjaipurall.com/hi",
+      "hi-IN": "https://www.escortjaipurall.com/hi",
     },
   },
 
-  // Favicon Configuration
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -136,48 +130,32 @@ export const metadata: Metadata = {
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     shortcut: "/favicon-16x16.png",
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      {
-        rel: "icon",
-        url: "/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        rel: "icon",
-        url: "/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
-    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
 
   manifest: "/site.webmanifest",
 
-  // Open Graph - Aggressive
+  // Open Graph - Multi-platform
   openGraph: {
-    title: "Jaipur Call Girls 2026 | Verified High-Profile Independent Escorts | VIP Companion Service",
+    title: "Jaipur Call Girls 2026 | Verified High-Profile Independent Escorts | Premium VIP Service",
     description:
-      "Verified independent call girls in Jaipur 2026. Premium escorts service across Malviya Nagar, C-Scheme, Tonk Road. Safe, discreet, confidential. Cash payment accepted. 24/7 available. Book genuine escorts online now!",
+      "Verified independent call girls in Jaipur 2026. Premium escorts service across all areas. Safe, discreet, confidential. Cash payment accepted. 24/7 available. Top-rated escort agency.",
     url: "https://www.escortjaipurall.com/",
     siteName: "Jaipur Call Girls - Verified Escorts Service",
     images: [
       {
-        url: "/android-chrome-512x512.png",
-        width: 512,
-        height: 512,
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
         alt: "Jaipur Call Girls - Verified Escorts Service 2026",
-        type: "image/png",
+        type: "image/jpeg",
       },
       {
-        url: "/android-chrome-192x192.png",
-        width: 192,
-        height: 192,
-        alt: "Jaipur Escorts - Premium Call Girls",
-        type: "image/png",
+        url: "/images/square-image.jpg",
+        width: 1200,
+        height: 1200,
+        alt: "Jaipur Call Girls - Premium Service",
+        type: "image/jpeg",
       },
     ],
     locale: "en_IN",
@@ -189,13 +167,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jaipur Call Girls 2026 | Verified High-Profile Independent Escorts",
     description:
-      "Premium verified call girls in Jaipur. Independent escorts in Malviya Nagar, C-Scheme. Discreet, safe, cash-after-meeting. 24/7 booking available. Top-rated escort service Jaipur.",
-    images: ["/android-chrome-512x512.png"],
+      "Premium verified call girls in Jaipur. Independent escorts in all areas. Discreet, safe, 24/7 available. Book now!",
+    images: ["/images/og-image.jpg"],
     creator: "@JaipurCallGirls",
     site: "@JaipurCallGirls",
   },
 
-  // Robots - Aggressive Indexing
+  // Robots and Indexing
   robots: {
     index: true,
     follow: true,
@@ -207,7 +185,10 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-    
+    bingbot: {
+      index: true,
+      follow: true,
+    },
   },
 
   // Verification
@@ -215,22 +196,20 @@ export const metadata: Metadata = {
     google: "EKSfvZ33e5L4FbUOKWrIS8x7_Hztwk14gPs-BnWKJJ4",
     other: {
       "msvalidate.01": "YOUR_BING_VERIFICATION_CODE",
+      "yandex-verification": "YOUR_YANDEX_CODE",
     },
   },
 
-  // Authors & Publisher
   authors: [{ name: "Jaipur Call Girls Team", url: "https://www.escortjaipurall.com/" }],
   creator: "Jaipur Call Girls Service",
   publisher: "Jaipur Call Girls - Verified Escort Service",
 
-  // Apple Web App
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Jaipur Call Girls",
   },
 
-  // Format Detection
   formatDetection: {
     telephone: true,
     email: true,
@@ -239,17 +218,22 @@ export const metadata: Metadata = {
     url: true,
   },
 
-  // Category
   category: "service",
-  classification: "Escort Service | Companion Service | Dating Service",
-
-  // Theme Color
-  themeColor: "#000000",
+  classification: "Escort Service | Companion Service | Adult Services",
 };
 
-/* ---------- Comprehensive JSON-LD Structured Data ---------- */
+/* ========== VIEWPORT SETTINGS ========== */
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  colorScheme: "dark",
+};
 
-// Main LocalBusiness Schema
+/* ========== JSON-LD STRUCTURED DATA ========== */
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -265,7 +249,7 @@ const localBusinessSchema = {
   description:
     "Verified high-profile independent escorts in Jaipur 2026. Premium companion service with certified call girls. Discreet, safe, confidential booking. Cash-after-meeting. 24/7 availability.",
   url: "https://www.escortjaipurall.com/",
-  image: "/android-chrome-512x512.png",
+  image: "/images/square-image.jpg",
   telephone: "+918058457070",
   email: "booking@escortjaipurall.com",
   address: {
@@ -325,52 +309,33 @@ const localBusinessSchema = {
   ],
   priceRange: "Negotiable",
   paymentAccepted: ["Cash", "CreditCard", "UPI"],
-  sameAs: [
-    "https://www.escortjaipurall.com/",
-  ],
+  sameAs: ["https://www.escortjaipurall.com/"],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.8",
-    ratingCount: "250",
+    ratingCount: "500",
     bestRating: "5",
     worstRating: "1",
   },
-  review: [
-    {
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-      },
-      author: {
-        "@type": "Person",
-        name: "Anonymous User",
-      },
-      reviewBody: "Professional and discreet service. Highly recommended!",
-    },
-  ],
 };
 
-// Organization Schema
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Jaipur Call Girls - Verified Escorts Service",
   url: "https://www.escortjaipurall.com/",
-  logo: "/android-chrome-512x512.png",
+  logo: "/images/square-image.jpg",
   description: "Premium verified independent escorts service in Jaipur 2026",
   telephone: "+918058457070",
   email: "booking@escortjaipurall.com",
-  sameAs: [
-    "https://www.escortjaipurall.com/",
-  ],
+  sameAs: ["https://www.escortjaipurall.com/"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
     telephone: "+918058457070",
     email: "booking@escortjaipurall.com",
     areaServed: "IN",
-    availableLanguage: "en",
+    availableLanguage: ["en", "hi"],
   },
   address: {
     "@type": "PostalAddress",
@@ -380,7 +345,6 @@ const organizationSchema = {
   },
 };
 
-// FAQ Schema
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -425,10 +389,25 @@ const faqSchema = {
         text: "We provide escort services across all major areas of Jaipur including Malviya Nagar, C-Scheme, Tonk Road, Civil Lines, Bani Park, and all surrounding areas.",
       },
     },
+    {
+      "@type": "Question",
+      name: "How much do escorts cost in Jaipur?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pricing is negotiable based on the escort profile, duration, and services required. Contact us for customized quotes.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is booking confidential?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Complete confidentiality is guaranteed. We never share client information and maintain strict privacy standards.",
+      },
+    },
   ],
 };
 
-// BreadcrumbList Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -442,14 +421,20 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Call Girls",
+      name: "Call Girls Profiles",
       item: "https://www.escortjaipurall.com/#profiles",
     },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Book Escorts",
+      name: "Booking",
       item: "https://www.escortjaipurall.com/#booking",
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: "Contact",
+      item: "https://www.escortjaipurall.com/contact",
     },
   ],
 };
@@ -464,97 +449,84 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        
+
         {/* SEO Meta Tags */}
         <meta name="language" content="English" />
-        <meta name="language" content="Hindi" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="3 days" />
         <meta name="author" content="Jaipur Call Girls Team" />
         <meta name="copyright" content="© 2026 Jaipur Call Girls. All rights reserved." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta name="bingbot" content="index, follow" />
-        
+        <meta name="bingbot" content="index, follow, nocache" />
+
         {/* Geo Targeting */}
         <meta name="geo.position" content="26.9124; 75.7873" />
         <meta name="geo.placename" content="Jaipur, Rajasthan, India" />
         <meta name="geo.region" content="IN-RJ" />
         <meta name="ICBM" content="26.9124, 75.7873" />
-        
-        {/* Theme Colors */}
-        <meta name="theme-color" content="#000000" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        <meta name="msapplication-navbutton-color" content="#000000" />
-        
-        {/* Mobile Web App */}
+
+        {/* Mobile Optimization */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Jaipur Call Girls" />
-        
+
         {/* Additional SEO Tags */}
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
         <meta name="audience" content="all" />
         <meta name="page-type" content="Business" />
-        <meta name="document-classification" content="Website" />
-        
-        {/* Preconnect & Performance */}
+        <meta name="document-type" content="Website" />
+
+        {/* Performance & Security */}
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.escortjaipurall.com/" />
-        
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        
+
         {/* Canonical & Alternates */}
         <link rel="canonical" href="https://www.escortjaipurall.com/" />
         <link rel="alternate" hrefLang="en-IN" href="https://www.escortjaipurall.com/" />
-        <link rel="alternate" hrefLang="hi" href="https://www.escortjaipurall.com/#hi" />
+        <link rel="alternate" hrefLang="hi-IN" href="https://www.escortjaipurall.com/hi" />
       </head>
 
       <body className="antialiased bg-black min-h-screen">
-        {/* Multiple JSON-LD Schemas for Aggressive SEO */}
+        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
           suppressHydrationWarning
         />
-        
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
           suppressHydrationWarning
         />
-        
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
           suppressHydrationWarning
         />
-        
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
           suppressHydrationWarning
         />
 
-        {/* Navbar Component */}
+        {/* Analytics */}
+        <Analytics />
+        <SpeedInsights />
+
+        {/* Navbar */}
         <Navbar />
 
-        {/* Page Content */}
+        {/* Content */}
         {children}
       </body>
     </html>

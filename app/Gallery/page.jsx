@@ -6,6 +6,10 @@ import Image from 'next/image';
 import personsData from '../../public/Images/images.js';
 
 
+
+
+
+
 const page = () => {
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [selectedMediaIndex, setSelectedMediaIndex] = useState(0);

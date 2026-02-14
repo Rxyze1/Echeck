@@ -5,6 +5,38 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Image from 'next/image'; 
 import personsData from '../../public/Images/images.js';
 
+export const metadata = {
+  title: 'Verified Companion Gallery | Real Photos | Jaipur Call Girls',
+  description: 'Browse verified companion gallery with real photos. View genuine escorts in Jaipur with 100% verified profiles.',
+  keywords: 'verified call girls gallery jaipur, real escort photos, genuine companion photos',
+  
+  alternates: {
+    canonical: 'https://www.escortjaipurall.com/Gallery',
+  },
+  
+  openGraph: {
+    title: 'Verified Companion Gallery - Real Photos',
+    description: 'View verified escorts with real photos and verified profiles.',
+    type: 'website',
+    url: 'https://www.escortjaipurall.com/Gallery',
+    images: [
+      {
+        url: 'https://www.escortjaipurall.com/gallery-og.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Verified Companion Gallery',
+    description: 'Real photos of verified escorts in Jaipur',
+  },
+  
+  robots: 'index, follow, max-image-preview:large',
+}
+
 
 const Gallery = () => {
   const [selectedProfile, setSelectedProfile] = useState(null);

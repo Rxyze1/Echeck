@@ -1,9 +1,48 @@
-'use client';
+
+
+"use client";
+
 
 import { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import ServicetextCard from '../components/MiniCompo/ServicetextCard';
+
+
+
+export const metadata = {
+  title: 'Verified Escort Services in Jaipur | Categories & Types',
+  description: 'Explore verified companion service categories...',
+  keywords: 'escort services jaipur, verified call girls...',
+  
+  alternates: {
+    canonical: 'https://www.escortjaipurall.com/Service',
+  },
+  
+  openGraph: {
+    title: 'Verified Escort Services in Jaipur',
+    description: 'Professional companion services...',
+    type: 'website',
+    url: 'https://www.escortjaipurall.com/Service',
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Verified Escort Services',
+  },
+  
+  robots: 'index, follow',
+}
+
+// ✅ ADD JSON-LD SCHEMA:
+function ServiceSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Verified Companion Services',
+    url: 'https://www.escortjaipurall.com/Service',
+  }
+}
 
 const Page = () => {
 
