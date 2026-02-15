@@ -8,6 +8,7 @@ import SummerLeavesEffect from '@/app/components/SummerLeavesEffect'
 import Areainjaipur from '@/app/components/Areasinjaipur'
 import HeroActions from '@/app/components/HeroActions'
 import Content from '@/app/components/Content'
+import TermsCard from '../app/components/MiniCompo/TermsCard'
 
 // ============================================
 // 🎯 AGGRESSIVE HOMEPAGE METADATA
@@ -405,6 +406,12 @@ export default function Page() {
 
       {/* Background Effects */}
       <SummerLeavesEffect />
+
+      {/* Term Card */}
+      <TermsCard />
+
+      {/* Navigation Bar */}
+     
 
       {/* Main Sections - All Client Components */}
       <header className="relative" role="banner">

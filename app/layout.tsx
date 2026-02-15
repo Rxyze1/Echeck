@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -672,6 +674,21 @@ export default function RootLayout({
 
         {/* ========== OPEN SEARCH DESCRIPTION ========== */}
         <link rel="search" type="application/opensearchdescription+xml" title="Jaipur Call Girls" href="/opensearch.xml" />
+
+        {/* ========== GOOGLE SITE VERIFICATION ========== */}
+
+
+        {/* ========== GOOGLE O-AUTH ========== */}
+
+       
+                <Script 
+                    src="https://accounts.google.com/gsi/client" 
+                    async 
+                    defer
+                    strategy="beforeInteractive"
+                />
+
+
       </head>
 
       <body className="antialiased bg-black min-h-screen">
