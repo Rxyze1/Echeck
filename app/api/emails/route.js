@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://api.escortjaipurall.com" || 'http://localhost:5000';
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000';
 
 export const POST = async (request) => {
     try {
@@ -25,16 +25,4 @@ export const GET = async (request) => {
     } catch (error) {
         return Response.json({ message: error.message }, { status: 500 });
     }
-};
-
-// ✅ ADD THIS EXPORT - Client-side helper
-export const acceptTermsAPI = async (email) => {
-    const response = await fetch('/api/emails', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
-    });
-
-    if (!response.ok) throw new Error('Failed to accept terms');
-    return response.json();
 };
